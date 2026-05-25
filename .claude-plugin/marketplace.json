@@ -9,7 +9,7 @@
     {
       "name": "claude-arcade",
       "description": "Terminal games and brain training while Claude works — Snake, Mental Math, and CodeWord in a split pane",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "source": "./"
     }
   ]
