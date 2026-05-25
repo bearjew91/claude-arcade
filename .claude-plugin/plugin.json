@@ -1,0 +1,16 @@
+{
+  "name": "claude-arcade",
+  "description": "Terminal games and brain training while Claude works — Snake, Mental Math, and CodeWord in a split pane",
+  "version": "1.0.0",
+  "author": {
+    "name": "katon"
+  },
+  "homepage": "https://github.com/katon/claude-arcade",
+  "license": "MIT",
+  "keywords": [
+    "games",
+    "brain-training",
+    "terminal",
+    "arcade"
+  ]
+}

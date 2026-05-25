@@ -1,0 +1,24 @@
+{
+  "name": "claude-arcade",
+  "version": "1.0.0",
+  "description": "Terminal games and brain training for Claude Code — play while Claude works",
+  "main": "index.js",
+  "bin": {
+    "claude-arcade": "./index.js"
+  },
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "games",
+    "terminal",
+    "brain-training",
+    "snake",
+    "wordle",
+    "math"
+  ],
+  "author": "katon",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
