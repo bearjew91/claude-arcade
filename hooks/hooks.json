@@ -1,8 +1,16 @@
 {
-  "hooks": [
-    {
-      "type": "PostToolCall",
-      "command": "hooks/launch-arcade.cmd"
-    }
-  ]
+  "hooks": {
+    "PostToolCall": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/launch-arcade.cmd\"",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
 }
