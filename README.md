@@ -1,66 +1,55 @@
-# Claude Arcade 🕹️
+# Dev Hangman 🎮
 
-Terminal games and brain training for Claude Code — play while Claude works!
+A polished terminal hangman game for Claude Code — guess tech terms while Claude works!
 
-When Claude is busy in auto mode, a split pane opens with games you can play right next to it.
+## What is it?
 
-## Games
+A Claude Code plugin that launches **Dev Hangman** in a Windows Terminal split pane. You play hangman with programming and devops terminology while Claude crunches through your tasks.
 
-- **🐍 Snake** — Classic snake with real-time controls. Eat apples, grow longer, don't crash.
-- **🧮 Mental Math** — Rapid-fire math problems with adaptive difficulty (5 levels). Train your mental arithmetic.
-- **📝 CodeWord** — Wordle-style word guessing. 6 attempts to find the 5-letter word.
+## Word Categories
 
-## Install as Claude Code Plugin
+- **Languages** — javascript, rust, python, kotlin, haskell...
+- **Tools** — docker, kubernetes, webpack, postgres, redis...
+- **Concepts** — recursion, middleware, polymorphism, closure...
+- **DevOps** — pipeline, container, microservice, canary...
+- **Web** — component, hydration, viewport, graphql...
+- **Git** — rebase, cherry, bisect, worktree, reflog...
 
-```bash
-claude plugin add /path/to/claude-arcade
-```
+180 tech terms across 6 categories.
 
-Or from a git repo:
-
-```bash
-claude plugin add https://github.com/youruser/claude-arcade
-```
-
-## How It Works
-
-1. Claude starts working in auto mode
-2. A PostToolCall hook opens a Windows Terminal split pane with the game menu
-3. Play games in the right pane while Claude works in the left
-4. Close the pane when you're done — or keep playing!
-
-## Manual Launch
-
-You can also run the arcade directly:
+## Install
 
 ```bash
-node index.js
+claude plugin marketplace add https://github.com/bearjew91/claude-arcade
+claude plugin install claude-arcade
 ```
 
-Or if installed globally:
+## Usage
 
-```bash
-claude-arcade
-```
-
-## Stats
-
-Your scores, streaks, and progress are saved to `~/.claude/arcade-stats.json` and persist across sessions. View them from the game menu (press `S`) or use the `/stats` skill in Claude Code.
+- `/play` — launch the game in a split pane
+- `/stats` — view your win rate, streaks, and category breakdown
+- The game also auto-launches via hook when Claude starts working
 
 ## Controls
 
 | Key | Action |
 |-----|--------|
-| `1/2/3` | Select a game from the menu |
-| `Arrow keys` | Move (Snake) |
-| `Letters` | Type answers (Math, CodeWord) |
-| `Enter` | Submit answer |
-| `Backspace` | Delete character |
-| `Escape` | Back to menu |
-| `R` | Rematch after game over |
-| `Q` | Quit |
+| `A-Z` | Guess a letter |
+| `N` | New game (after win/loss) |
+| `S` | View stats (after win/loss) |
+| `ESC` | Quit |
+
+## Features
+
+- ASCII hangman art with color stages
+- Category hints on each word
+- Lives progress bar
+- Color-coded keyboard showing used/correct/wrong letters
+- Persistent stats with category breakdown
+- Streak tracking
+- Zero dependencies — Node.js built-ins only
 
 ## Requirements
 
 - Node.js 18+
-- Windows Terminal (for split pane feature, falls back to new window otherwise)
+- Windows Terminal (for split pane)

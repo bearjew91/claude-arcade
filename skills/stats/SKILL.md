@@ -1,29 +1,29 @@
 ---
 name: stats
-description: Show Claude Arcade lifetime stats — high scores, streaks, and brain training progress
+description: Show Dev Hangman stats — win rate, streaks, and category breakdown
 ---
 
-# Arcade Stats
+# Hangman Stats
 
-Display the user's Claude Arcade statistics.
-
-Read the stats file from `~/.claude/arcade-stats.json` and present the data in a formatted table.
-
-If the file doesn't exist, tell the user they haven't played any games yet and suggest they try `/play` or wait for the arcade to launch automatically.
-
-Format the output like this:
+Read `~/.claude/arcade-stats.json` and display:
 
 ```
-🕹️ CLAUDE ARCADE STATS
+📊 DEV HANGMAN STATS
 
-🐍 Snake
-   Games: X | High Score: X | Total Apples: X
+Games Played:  X
+Wins:          X
+Losses:        X
+Win Rate:      X%
+Streak:        X
+Best Streak:   X
 
-🧮 Mental Math
-   Games: X | High Score: X | Accuracy: X%
-   Best Streak: X | Highest Level: X
-
-📝 CodeWord
-   Games: X | Win Rate: X% | Current Streak: X
-   Best Streak: X | Guess Distribution: 1️⃣X 2️⃣X 3️⃣X 4️⃣X 5️⃣X 6️⃣X
+── By Category ──
+LANGUAGES    X/X (X%)
+TOOLS        X/X (X%)
+CONCEPTS     X/X (X%)
+DEVOPS       X/X (X%)
+WEB          X/X (X%)
+GIT          X/X (X%)
 ```
+
+If the file doesn't exist, tell the user to play a round first with `/play`.

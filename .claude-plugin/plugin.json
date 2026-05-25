@@ -1,16 +1,17 @@
 {
   "name": "claude-arcade",
-  "description": "Terminal games and brain training while Claude works — Snake, Mental Math, and CodeWord in a split pane",
-  "version": "1.0.2",
+  "description": "Dev Hangman — guess tech terms while Claude works, in a split pane",
+  "version": "2.0.0",
   "author": {
     "name": "katon"
   },
-  "homepage": "https://github.com/katon/claude-arcade",
+  "homepage": "https://github.com/bearjew91/claude-arcade",
   "license": "MIT",
   "keywords": [
     "games",
-    "brain-training",
+    "hangman",
     "terminal",
-    "arcade"
+    "arcade",
+    "dev"
   ]
 }

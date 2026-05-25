@@ -1,19 +1,13 @@
 ---
 name: play
-description: Launch Claude Arcade — terminal games and brain training in a split pane
+description: Launch Dev Hangman — guess tech terms in a split pane while Claude works
 ---
 
-# Play Claude Arcade
+# Play Dev Hangman
 
-Launch the arcade game menu in a Windows Terminal split pane.
+Launch Dev Hangman in a Windows Terminal split pane.
 
-When this skill is invoked, run the launch script:
-
-```bash
-hooks/launch-arcade.cmd
-```
-
-If that fails (e.g., not in the plugin directory), run it directly:
+Run:
 
 ```bash
 wt -w 0 sp -s 0.5 node "<plugin-dir>/index.js"
@@ -21,6 +15,4 @@ wt -w 0 sp -s 0.5 node "<plugin-dir>/index.js"
 
 Where `<plugin-dir>` is the directory containing this skill's plugin.
 
-Tell the user: "Arcade launched! Check the split pane to your right. Games: Snake, Mental Math, and CodeWord."
-
-If the user passes a game name as an argument (e.g., `/play snake`), mention which game they should pick from the menu.
+Tell the user: "Dev Hangman launched! Check the split pane — guess tech terms while I work."

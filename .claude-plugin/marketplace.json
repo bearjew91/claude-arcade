@@ -1,6 +1,6 @@
 {
   "name": "claude-arcade",
-  "description": "Terminal games and brain training for Claude Code",
+  "description": "Dev Hangman for Claude Code — play while Claude works",
   "owner": {
     "name": "katon",
     "email": "katona.legios@gmail.com"
@@ -8,8 +8,8 @@
   "plugins": [
     {
       "name": "claude-arcade",
-      "description": "Terminal games and brain training while Claude works — Snake, Mental Math, and CodeWord in a split pane",
-      "version": "1.0.2",
+      "description": "Dev Hangman — guess tech terms while Claude works, in a split pane",
+      "version": "2.0.0",
       "source": "./"
     }
   ]

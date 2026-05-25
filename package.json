@@ -1,7 +1,7 @@
 {
   "name": "claude-arcade",
-  "version": "1.0.2",
-  "description": "Terminal games and brain training for Claude Code — play while Claude works",
+  "version": "2.0.0",
+  "description": "Dev Hangman — guess tech terms while Claude works in a split pane",
   "main": "index.js",
   "bin": {
     "claude-arcade": "./index.js"
@@ -10,11 +10,9 @@
     "claude-code",
     "plugin",
     "games",
+    "hangman",
     "terminal",
-    "brain-training",
-    "snake",
-    "wordle",
-    "math"
+    "dev"
   ],
   "author": "katon",
   "license": "MIT",
