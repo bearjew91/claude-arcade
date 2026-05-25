@@ -16,7 +16,7 @@ hooks/launch-arcade.cmd
 If that fails (e.g., not in the plugin directory), run it directly:
 
 ```bash
-wt -w 0 sp -s 0.35 node "<plugin-dir>/index.js"
+wt -w 0 sp -s 0.5 node "<plugin-dir>/index.js"
 ```
 
 Where `<plugin-dir>` is the directory containing this skill's plugin.
