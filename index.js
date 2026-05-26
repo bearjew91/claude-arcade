@@ -63,74 +63,60 @@ function saveHangmanStats(stats) {
 
 const HANGMAN = [
   [
-    `  ┌───────┐ `,
-    `  │       │ `,
-    `  │         `,
-    `  │         `,
-    `  │         `,
-    `  │         `,
-    `  │         `,
-    `  ╧═════════`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|_______${R}`,
   ],
   [
-    `  ┌───────┐ `,
-    `  │       │ `,
-    `  │      ${YELLOW}O${R}  `,
-    `  │         `,
-    `  │         `,
-    `  │         `,
-    `  │         `,
-    `  ╧═════════`,
+    `  ${GRAY}|---+${R}`,
+    `  ${GRAY}|${R}   ${YELLOW}O${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|_______${R}`,
   ],
   [
-    `  ┌───────┐ `,
-    `  │       │ `,
-    `  │      ${YELLOW}O${R}  `,
-    `  │      ${WHITE}│${R}  `,
-    `  │         `,
-    `  │         `,
-    `  │         `,
-    `  ╧═════════`,
+    `  ${GRAY}|---+${R}`,
+    `  ${GRAY}|${R}   ${YELLOW}O${R}`,
+    `  ${GRAY}|${R}   ${WHITE}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|_______${R}`,
   ],
   [
-    `  ┌───────┐ `,
-    `  │       │ `,
-    `  │      ${YELLOW}O${R}  `,
-    `  │     ${WHITE}╱│${R}  `,
-    `  │         `,
-    `  │         `,
-    `  │         `,
-    `  ╧═════════`,
+    `  ${GRAY}|---+${R}`,
+    `  ${GRAY}|${R}   ${YELLOW}O${R}`,
+    `  ${GRAY}|${R}  ${WHITE}/|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|_______${R}`,
   ],
   [
-    `  ┌───────┐ `,
-    `  │       │ `,
-    `  │      ${YELLOW}O${R}  `,
-    `  │     ${WHITE}╱│╲${R} `,
-    `  │         `,
-    `  │         `,
-    `  │         `,
-    `  ╧═════════`,
+    `  ${GRAY}|---+${R}`,
+    `  ${GRAY}|${R}   ${YELLOW}O${R}`,
+    `  ${GRAY}|${R}  ${WHITE}/|\\${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|_______${R}`,
   ],
   [
-    `  ┌───────┐ `,
-    `  │       │ `,
-    `  │      ${YELLOW}O${R}  `,
-    `  │     ${WHITE}╱│╲${R} `,
-    `  │     ${WHITE}╱${R}   `,
-    `  │         `,
-    `  │         `,
-    `  ╧═════════`,
+    `  ${GRAY}|---+${R}`,
+    `  ${GRAY}|${R}   ${YELLOW}O${R}`,
+    `  ${GRAY}|${R}  ${WHITE}/|\\${R}`,
+    `  ${GRAY}|${R}  ${WHITE}/${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|_______${R}`,
   ],
   [
-    `  ┌───────┐ `,
-    `  │       │ `,
-    `  │      ${RED}O${R}  `,
-    `  │     ${RED}╱│╲${R} `,
-    `  │     ${RED}╱ ╲${R} `,
-    `  │         `,
-    `  │         `,
-    `  ╧═════════`,
+    `  ${GRAY}|---+${R}`,
+    `  ${GRAY}|${R}   ${RED}O${R}`,
+    `  ${GRAY}|${R}  ${RED}/|\\${R}`,
+    `  ${GRAY}|${R}  ${RED}/ \\${R}`,
+    `  ${GRAY}|${R}`,
+    `  ${GRAY}|_______${R}`,
   ],
 ];
 
@@ -184,22 +170,23 @@ function renderHangmanKeyboard(state) {
 
 function renderHangmanProgressBar(state) {
   const remaining = state.maxWrong - state.wrong.length;
-  const filled = '█'.repeat(remaining);
-  const empty = '░'.repeat(state.wrong.length);
+  const filled = '#'.repeat(remaining);
+  const empty = '-'.repeat(state.wrong.length);
   const color = remaining <= 2 ? RED : remaining <= 4 ? YELLOW : GREEN;
-  return `  ${color}${filled}${GRAY}${empty}${R} ${DIM}${remaining}/${state.maxWrong} lives${R}`;
+  return `  ${color}[${filled}${GRAY}${empty}${color}]${R} ${DIM}${remaining}/${state.maxWrong} lives${R}`;
 }
 
 function renderHangman(state) {
   const out = [];
   out.push(clearScreen() + HIDE_CURSOR);
-  out.push(`${CYAN}${BOLD}`);
-  out.push(`  ╔══════════════════════════════════════════╗`);
-  out.push(`  ║     ${MAGENTA}⌨${CYAN}  DEV HANGMAN  ${MAGENTA}⌨${CYAN}                   ║`);
-  out.push(`  ╚══════════════════════════════════════════╝${R}`);
+
+  out.push(`${CYAN}${BOLD}  +---------------------------------+${R}`);
+  out.push(`${CYAN}${BOLD}  |       D E V   H A N G M A N     |${R}`);
+  out.push(`${CYAN}${BOLD}  +---------------------------------+${R}`);
   out.push('');
   out.push(`  ${DIM}Category:${R} ${BG_YELLOW} ${state.category.toUpperCase()} ${R}`);
   out.push('');
+
   const stage = Math.min(state.wrong.length, HANGMAN.length - 1);
   for (const line of HANGMAN[stage]) out.push(line);
   out.push('');
@@ -207,6 +194,7 @@ function renderHangman(state) {
   out.push('');
   out.push(renderHangmanProgressBar(state));
   out.push('');
+
   if (state.wrong.length > 0) {
     out.push(`  ${DIM}Wrong:${R} ${state.wrong.map(ch => `${RED}${ch}${R}`).join(' ')}`);
   } else {
@@ -215,12 +203,14 @@ function renderHangman(state) {
   out.push('');
   out.push(renderHangmanKeyboard(state));
   out.push('');
+
   if (state.message) out.push(`  ${state.messageColor}${BOLD}${state.message}${R}`);
   out.push('');
+
   if (state.won || state.lost) {
     out.push(`  ${CYAN}[N]${R} New Game  ${CYAN}[M]${R} Menu  ${CYAN}[Q]${R} Quit`);
   } else {
-    out.push(`  ${DIM}Type a letter to guess · ESC to quit${R}`);
+    out.push(`  ${DIM}Type a letter to guess | ESC quit${R}`);
   }
   process.stdout.write(out.join('\n') + '\n');
 }
@@ -243,12 +233,12 @@ function handleHangmanGuess(ch, state) {
     const allRevealed = state.word.split('').every(c => state.guessed.has(c));
     if (allRevealed) {
       state.won = true;
-      state.message = '🎉 You got it!';
+      state.message = '>> YOU GOT IT! <<';
       state.messageColor = GREEN;
       recordHangmanResult(state, true);
     } else {
       const remaining = state.word.split('').filter(c => !state.guessed.has(c)).length;
-      state.message = `✓ Nice! ${remaining} letter${remaining === 1 ? '' : 's'} left`;
+      state.message = `+ Nice! ${remaining} letter${remaining === 1 ? '' : 's'} left`;
       state.messageColor = GREEN;
     }
   } else {
@@ -256,14 +246,14 @@ function handleHangmanGuess(ch, state) {
     const lives = state.maxWrong - state.wrong.length;
     if (lives <= 0) {
       state.lost = true;
-      state.message = `💀 The word was: ${state.word}`;
+      state.message = `GAME OVER! The word was: ${state.word}`;
       state.messageColor = RED;
       recordHangmanResult(state, false);
     } else if (lives === 1) {
-      state.message = '✗ Last chance!';
+      state.message = 'x Last chance!';
       state.messageColor = RED;
     } else {
-      state.message = `✗ Not in the word · ${lives} lives left`;
+      state.message = `x Not in the word | ${lives} lives left`;
       state.messageColor = YELLOW;
     }
   }
@@ -288,24 +278,20 @@ function renderMenu() {
   const out = [];
   out.push(clearScreen() + HIDE_CURSOR);
   out.push('');
-  out.push(`${CYAN}${BOLD}`);
-  out.push(`  ╔══════════════════════════════════════════╗`);
-  out.push(`  ║                                          ║`);
-  out.push(`  ║   ${MAGENTA}▓▓▓${CYAN}  C L A U D E   A R C A D E  ${MAGENTA}▓▓▓${CYAN}   ║`);
-  out.push(`  ║                                          ║`);
-  out.push(`  ║   ${GRAY}${DIM}play while claude works${R}${CYAN}${BOLD}                 ║`);
-  out.push(`  ║                                          ║`);
-  out.push(`  ╠══════════════════════════════════════════╣`);
-  out.push(`  ║                                          ║`);
-  out.push(`  ║   ${GREEN}[1]${CYAN}  ${WHITE}⌨  Dev Hangman${R}${CYAN}${BOLD}                   ║`);
-  out.push(`  ║   ${GRAY}${DIM}     Guess tech terms letter by letter${R}${CYAN}${BOLD}  ║`);
-  out.push(`  ║                                          ║`);
-  out.push(`  ║   ${YELLOW}[2]${CYAN}  ${WHITE}🧠 Tech Trivia${R}${CYAN}${BOLD}                   ║`);
-  out.push(`  ║   ${GRAY}${DIM}     ABCD questions from easy to hard${R}${CYAN}${BOLD}  ║`);
-  out.push(`  ║                                          ║`);
-  out.push(`  ║   ${GRAY}[Q]${CYAN}  ${GRAY}Quit${R}${CYAN}${BOLD}                              ║`);
-  out.push(`  ║                                          ║`);
-  out.push(`  ╚══════════════════════════════════════════╝${R}`);
+  out.push(`${CYAN}${BOLD}  +=========================================+`);
+  out.push(`  |                                         |`);
+  out.push(`  |     C L A U D E   A R C A D E           |`);
+  out.push(`  |     ${GRAY}${DIM}play while claude works${R}${CYAN}${BOLD}              |`);
+  out.push(`  |                                         |`);
+  out.push(`  +=========================================+${R}`);
+  out.push('');
+  out.push(`  ${GREEN}[1]${R}  Dev Hangman`);
+  out.push(`      ${DIM}Guess tech terms letter by letter${R}`);
+  out.push('');
+  out.push(`  ${YELLOW}[2]${R}  Tech Trivia`);
+  out.push(`      ${DIM}ABCD questions from easy to hard${R}`);
+  out.push('');
+  out.push(`  ${GRAY}[Q]  Quit${R}`);
   out.push('');
   out.push(`  ${DIM}Press 1 or 2 to start${R}`);
 
