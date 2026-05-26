@@ -56,8 +56,6 @@ function buildQuestionPool() {
     const j = Math.floor(Math.random() * (i + 1));
     [pool[i], pool[j]] = [pool[j], pool[i]];
   }
-  const order = { easy: 0, medium: 1, hard: 2 };
-  pool.sort((a, b) => order[a.difficulty] - order[b.difficulty]);
   return pool;
 }
 

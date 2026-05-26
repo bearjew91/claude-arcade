@@ -179,6 +179,456 @@
       "d": "Computing using quantum processors",
       "answer": "b",
       "category": "tech"
+    },
+    {
+      "q": "Who co-founded Apple with Steve Jobs?",
+      "a": "Bill Gates",
+      "b": "Larry Page",
+      "c": "Elon Musk",
+      "d": "Steve Wozniak",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What does the 'href' attribute in an HTML anchor tag specify?",
+      "a": "The destination URL",
+      "b": "The font size of the link",
+      "c": "The color of the link",
+      "d": "The tooltip text",
+      "answer": "a",
+      "category": "web"
+    },
+    {
+      "q": "Which programming language is known as the 'language of the web'?",
+      "a": "C++",
+      "b": "Java",
+      "c": "Ruby",
+      "d": "JavaScript",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is the default port number for HTTP?",
+      "a": "80",
+      "b": "443",
+      "c": "8080",
+      "d": "3000",
+      "answer": "a",
+      "category": "web"
+    },
+    {
+      "q": "What does GPU stand for?",
+      "a": "General Processing Unit",
+      "b": "Graphical Pixel Utility",
+      "c": "Global Power Unit",
+      "d": "Graphics Processing Unit",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "Which command creates a new Git branch?",
+      "a": "git branch <name>",
+      "b": "git new branch",
+      "c": "git create <name>",
+      "d": "git make branch",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What type of malware locks your files and demands payment?",
+      "a": "Spyware",
+      "b": "Adware",
+      "c": "Trojan",
+      "d": "Ransomware",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "What HTML tag is used to create a numbered list?",
+      "a": "<ol>",
+      "b": "<ul>",
+      "c": "<nl>",
+      "d": "<list>",
+      "answer": "a",
+      "category": "web"
+    },
+    {
+      "q": "Which company developed the Android operating system?",
+      "a": "Apple",
+      "b": "Microsoft",
+      "c": "Samsung",
+      "d": "Google",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What does 'IDE' stand for in software development?",
+      "a": "Internet Development Engine",
+      "b": "Integrated Development Environment",
+      "c": "Internal Debug Editor",
+      "d": "Interactive Design Engine",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "Which of these is NOT an operating system?",
+      "a": "Linux",
+      "b": "macOS",
+      "c": "Oracle",
+      "d": "Windows",
+      "answer": "c",
+      "category": "tech"
+    },
+    {
+      "q": "What does 'npm' stand for?",
+      "a": "New Program Manager",
+      "b": "Node Project Manager",
+      "c": "Node Package Manager",
+      "d": "Network Package Module",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is the smallest unit of data in computing?",
+      "a": "Bit",
+      "b": "Byte",
+      "c": "Kilobyte",
+      "d": "Nibble",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "Which CSS property changes the text color?",
+      "a": "font-color",
+      "b": "text-style",
+      "c": "color",
+      "d": "text-color",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What is the Linux command to list files in a directory?",
+      "a": "dir",
+      "b": "show",
+      "c": "list",
+      "d": "ls",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "Which protocol is used to send emails?",
+      "a": "FTP",
+      "b": "SMTP",
+      "c": "SSH",
+      "d": "HTTP",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is a 'boolean' data type?",
+      "a": "A true or false value",
+      "b": "A decimal number",
+      "c": "A list of values",
+      "d": "A text string",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What does 'LAN' stand for?",
+      "a": "Large Area Network",
+      "b": "Local Access Node",
+      "c": "Linked Application Network",
+      "d": "Local Area Network",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "Which HTML element is used to define the largest heading?",
+      "a": "<heading>",
+      "b": "<h6>",
+      "c": "<head>",
+      "d": "<h1>",
+      "answer": "d",
+      "category": "web"
+    },
+    {
+      "q": "What is the purpose of an antivirus program?",
+      "a": "To detect and remove malicious software",
+      "b": "To speed up the computer",
+      "c": "To manage files and folders",
+      "d": "To create backups",
+      "answer": "a",
+      "category": "cyber"
+    },
+    {
+      "q": "Which data structure uses FIFO (First In, First Out)?",
+      "a": "Stack",
+      "b": "Queue",
+      "c": "Tree",
+      "d": "Graph",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What year was the first iPhone released?",
+      "a": "2005",
+      "b": "2006",
+      "c": "2008",
+      "d": "2007",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What does the <title> tag in HTML define?",
+      "a": "The main heading on the page",
+      "b": "The text shown in the browser tab",
+      "c": "The page's subtitle",
+      "d": "The alt text for images",
+      "answer": "b",
+      "category": "web"
+    },
+    {
+      "q": "What programming language does Arduino primarily use?",
+      "a": "Python",
+      "b": "JavaScript",
+      "c": "C/C++",
+      "d": "Ruby",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is Bluetooth named after?",
+      "a": "A blue-colored computer chip",
+      "b": "The color of the first prototype",
+      "c": "A 10th-century Scandinavian king",
+      "d": "The Blue Tooth mountain in Sweden",
+      "answer": "c",
+      "category": "tech"
+    },
+    {
+      "q": "What does the 'alt' attribute in an <img> tag provide?",
+      "a": "A link to another image",
+      "b": "The image dimensions",
+      "c": "The image file format",
+      "d": "Alternative text if the image can't load",
+      "answer": "d",
+      "category": "web"
+    },
+    {
+      "q": "Which key combination commonly opens a browser's developer tools?",
+      "a": "F12",
+      "b": "Ctrl+Shift+D",
+      "c": "Ctrl+Alt+T",
+      "d": "Ctrl+F5",
+      "answer": "a",
+      "category": "web"
+    },
+    {
+      "q": "What is an algorithm?",
+      "a": "A type of computer virus",
+      "b": "A step-by-step set of instructions to solve a problem",
+      "c": "A hardware component",
+      "d": "A programming language",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What does USB stand for?",
+      "a": "Universal Serial Bus",
+      "b": "United System Bridge",
+      "c": "Universal System Backup",
+      "d": "Unified Serial Bridge",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "Which of these is a version control system?",
+      "a": "Docker",
+      "b": "Kubernetes",
+      "c": "Git",
+      "d": "Jenkins",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What does BIOS stand for?",
+      "a": "Binary Integrated Operating Software",
+      "b": "Built-In Operating System",
+      "c": "Base Internal Operation Setup",
+      "d": "Basic Input Output System",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What is the CSS box model made up of?",
+      "a": "Header, body, footer, sidebar",
+      "b": "Content, padding, border, margin",
+      "c": "Font, color, size, weight",
+      "d": "Row, column, grid, cell",
+      "answer": "b",
+      "category": "web"
+    },
+    {
+      "q": "What is open-source software?",
+      "a": "Software that runs only on Linux",
+      "b": "Software that is always free of charge",
+      "c": "Software whose source code is publicly available",
+      "d": "Software made by volunteers only",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "Who is known as the father of the World Wide Web?",
+      "a": "Tim Berners-Lee",
+      "b": "Vint Cerf",
+      "c": "Linus Torvalds",
+      "d": "Alan Turing",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "Which tag is used to create a hyperlink in HTML?",
+      "a": "<link>",
+      "b": "<href>",
+      "c": "<url>",
+      "d": "<a>",
+      "answer": "d",
+      "category": "web"
+    },
+    {
+      "q": "What does 'sudo' stand for in Linux?",
+      "a": "Super User Direct Operation",
+      "b": "System Utility for Device Output",
+      "c": "Superuser Do",
+      "d": "Switch User and Deploy Operation",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "How many bytes are in a kilobyte (in common usage)?",
+      "a": "100",
+      "b": "512",
+      "c": "1024",
+      "d": "2048",
+      "answer": "c",
+      "category": "tech"
+    },
+    {
+      "q": "What is a strong password practice?",
+      "a": "Using your birthday",
+      "b": "Using a mix of letters, numbers, and symbols",
+      "c": "Using the same password everywhere",
+      "d": "Writing it on a sticky note on your monitor",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "Which company created the C# programming language?",
+      "a": "Google",
+      "b": "Oracle",
+      "c": "Apple",
+      "d": "Microsoft",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is the main function of a router?",
+      "a": "Direct network traffic between devices and networks",
+      "b": "Store website data",
+      "c": "Encrypt passwords",
+      "d": "Block viruses",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "Which of these is a NoSQL database?",
+      "a": "PostgreSQL",
+      "b": "MySQL",
+      "c": "SQLite",
+      "d": "MongoDB",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What does 'HTTPS' add compared to 'HTTP'?",
+      "a": "Faster page loading",
+      "b": "Encryption via TLS/SSL",
+      "c": "Better image quality",
+      "d": "Video streaming support",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the primary language used for iOS app development?",
+      "a": "Swift",
+      "b": "Kotlin",
+      "c": "Java",
+      "d": "Dart",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What does 'www' stand for?",
+      "a": "Wide Web World",
+      "b": "Web World Wide",
+      "c": "World Wide Web",
+      "d": "World Web Wide",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "Which CSS property is used to make text bold?",
+      "a": "text-weight: bold",
+      "b": "font-bold: true",
+      "c": "style: bold",
+      "d": "font-weight: bold",
+      "answer": "d",
+      "category": "web"
+    },
+    {
+      "q": "What does 'IoT' stand for?",
+      "a": "Internet of Things",
+      "b": "Input or Throughput",
+      "c": "Integration of Technology",
+      "d": "Internal Operational Tools",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "Which data structure uses LIFO (Last In, First Out)?",
+      "a": "Queue",
+      "b": "Array",
+      "c": "Linked List",
+      "d": "Stack",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What does a compiler do?",
+      "a": "Connects to the internet",
+      "b": "Translates source code into machine code",
+      "c": "Manages files on disk",
+      "d": "Runs a virtual machine",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is the purpose of a cookie in web browsing?",
+      "a": "To store small pieces of data from websites on your computer",
+      "b": "To block pop-up ads",
+      "c": "To speed up downloads",
+      "d": "To scan for viruses",
+      "answer": "a",
+      "category": "web"
+    },
+    {
+      "q": "Who created the Linux kernel?",
+      "a": "Richard Stallman",
+      "b": "Dennis Ritchie",
+      "c": "Linus Torvalds",
+      "d": "Ken Thompson",
+      "answer": "c",
+      "category": "tech"
     }
   ],
   "medium": [
@@ -361,6 +811,456 @@
       "d": "Creating chatbots",
       "answer": "b",
       "category": "cyber"
+    },
+    {
+      "q": "In JavaScript, what does 'typeof null' return?",
+      "a": "null",
+      "b": "undefined",
+      "c": "boolean",
+      "d": "object",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is the purpose of a load balancer?",
+      "a": "To distribute incoming traffic across multiple servers",
+      "b": "To compress data before sending it",
+      "c": "To encrypt network traffic",
+      "d": "To cache static content",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "Which HTTP method is used to update an existing resource?",
+      "a": "GET",
+      "b": "POST",
+      "c": "DELETE",
+      "d": "PUT",
+      "answer": "d",
+      "category": "web"
+    },
+    {
+      "q": "What does CORS stand for in web development?",
+      "a": "Central Origin Resource System",
+      "b": "Cached Object Retrieval Service",
+      "c": "Cross-Origin Resource Sharing",
+      "d": "Common Object Request Standard",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What is a webhook?",
+      "a": "A browser extension for security",
+      "b": "A function that runs on page load",
+      "c": "A tool for debugging APIs",
+      "d": "An automated HTTP callback triggered by an event",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "Which port does HTTPS use by default?",
+      "a": "443",
+      "b": "80",
+      "c": "8080",
+      "d": "3000",
+      "answer": "a",
+      "category": "web"
+    },
+    {
+      "q": "What is the primary purpose of salting a password hash?",
+      "a": "Making the password longer",
+      "b": "Speeding up the hashing process",
+      "c": "Preventing identical passwords from having the same hash",
+      "d": "Encrypting the password in transit",
+      "answer": "c",
+      "category": "cyber"
+    },
+    {
+      "q": "What is a microservice architecture?",
+      "a": "Running apps on very small servers",
+      "b": "A design for mobile-only applications",
+      "c": "A way to minimize code size",
+      "d": "An architecture where apps are built as small, independent services",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is the difference between 'git merge' and 'git rebase'?",
+      "a": "Merge creates a merge commit, rebase replays commits linearly",
+      "b": "They are identical operations",
+      "c": "Merge deletes branches, rebase keeps them",
+      "d": "Rebase is only for remote branches",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is a CDN (Content Delivery Network)?",
+      "a": "A tool for writing CSS",
+      "b": "A central database for DNS records",
+      "c": "A network of servers that delivers content from locations near the user",
+      "d": "A continuous deployment notification system",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What is the OSI model's Layer 7 called?",
+      "a": "Transport",
+      "b": "Network",
+      "c": "Session",
+      "d": "Application",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "Which tool is commonly used for infrastructure as code?",
+      "a": "Terraform",
+      "b": "Photoshop",
+      "c": "Figma",
+      "d": "Slack",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is the purpose of a JWT (JSON Web Token)?",
+      "a": "Styling web pages with JSON",
+      "b": "Storing database schemas",
+      "c": "Compressing JSON data",
+      "d": "Securely transmitting claims between parties",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "In CSS, what does 'position: sticky' do?",
+      "a": "Makes an element invisible until scrolled to",
+      "b": "Fixes the element to the viewport permanently",
+      "c": "Toggles between relative and fixed based on scroll position",
+      "d": "Glues two elements together visually",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What does YAML stand for?",
+      "a": "YAML Ain't Markup Language",
+      "b": "Yet Another Markup Language",
+      "c": "Your Application's Main Layout",
+      "d": "Youthful Automated Meta Language",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is a 'dangling pointer'?",
+      "a": "A pointer that points to freed or invalid memory",
+      "b": "A pointer without a data type",
+      "c": "A pointer in a linked list's last node",
+      "d": "A pointer that points to itself",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "Which design pattern ensures a class has only one instance?",
+      "a": "Factory",
+      "b": "Observer",
+      "c": "Singleton",
+      "d": "Adapter",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is the primary purpose of a DMZ in networking?",
+      "a": "To boost Wi-Fi signals",
+      "b": "To provide an extra security layer between internal and external networks",
+      "c": "To store encrypted backups",
+      "d": "To manage DHCP leases",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What HTTP status code indicates a server error?",
+      "a": "200",
+      "b": "301",
+      "c": "404",
+      "d": "500",
+      "answer": "d",
+      "category": "web"
+    },
+    {
+      "q": "What is Redis commonly used for?",
+      "a": "In-memory caching and data storage",
+      "b": "Server-side rendering",
+      "c": "Compiling JavaScript",
+      "d": "Managing DNS records",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is the difference between a process and a thread?",
+      "a": "They are the same thing",
+      "b": "A process is faster than a thread",
+      "c": "Threads share memory within a process; processes have separate memory",
+      "d": "Threads can only run on multi-core CPUs",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What does SSH stand for?",
+      "a": "Secure Shell",
+      "b": "System Socket Handler",
+      "c": "Secure System Hosting",
+      "d": "Server-Side HTTP",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "What is a GraphQL advantage over REST?",
+      "a": "It is always faster",
+      "b": "It uses less server memory",
+      "c": "It doesn't require a server",
+      "d": "Clients can request exactly the data they need",
+      "answer": "d",
+      "category": "web"
+    },
+    {
+      "q": "What is 'garbage collection' in programming?",
+      "a": "Deleting old source code files",
+      "b": "Removing unused variables from the editor",
+      "c": "Automatic reclamation of memory no longer in use",
+      "d": "Cleaning up log files",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is a subnet mask used for?",
+      "a": "Hiding your IP address from hackers",
+      "b": "Dividing an IP network into sub-networks",
+      "c": "Masking your MAC address",
+      "d": "Encrypting network traffic",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is the principle of least privilege?",
+      "a": "Giving every user admin rights for convenience",
+      "b": "Restricting internet access to managers only",
+      "c": "Disabling all accounts by default",
+      "d": "Using the minimum permissions necessary for a task",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "Which JavaScript keyword declares a block-scoped variable?",
+      "a": "var",
+      "b": "let",
+      "c": "static",
+      "d": "dim",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is an event loop in Node.js?",
+      "a": "A mechanism that handles asynchronous callbacks in a single thread",
+      "b": "A loop that listens for mouse clicks",
+      "c": "A scheduler for multi-threaded operations",
+      "d": "A UI rendering pipeline",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is a VLAN?",
+      "a": "Very Large Area Network",
+      "b": "Virtual Local Area Network",
+      "c": "Verified LAN Access Node",
+      "d": "Variable Length Address Notation",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is the '403 Forbidden' HTTP status code?",
+      "a": "The page has moved permanently",
+      "b": "The server is down for maintenance",
+      "c": "The request is valid but the server refuses to authorize it",
+      "d": "The resource was not found",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What testing approach writes tests before implementation code?",
+      "a": "Integration testing",
+      "b": "Regression testing",
+      "c": "Test-driven development (TDD)",
+      "d": "Smoke testing",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is ARP used for in networking?",
+      "a": "Assigning IP addresses to devices",
+      "b": "Routing traffic between networks",
+      "c": "Encrypting local network traffic",
+      "d": "Resolving IP addresses to MAC addresses",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What is a keylogger?",
+      "a": "A tool for managing SSH keys",
+      "b": "Software or hardware that records keystrokes",
+      "c": "A keyboard testing program",
+      "d": "An encryption key manager",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is 'hot module replacement' in modern web dev?",
+      "a": "Replacing faulty server hardware without downtime",
+      "b": "Swapping CPU modules while the system runs",
+      "c": "A load balancing technique",
+      "d": "Updating code in the browser without a full page reload",
+      "answer": "d",
+      "category": "web"
+    },
+    {
+      "q": "What is a deadlock?",
+      "a": "When a program crashes due to infinite recursion",
+      "b": "When a hard drive becomes corrupted",
+      "c": "When two or more processes wait for each other and none can proceed",
+      "d": "When a database runs out of storage",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "Which cloud service model provides virtual machines and storage?",
+      "a": "SaaS",
+      "b": "PaaS",
+      "c": "FaaS",
+      "d": "IaaS",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What is content security policy (CSP)?",
+      "a": "An HTTP header that restricts resource loading to prevent XSS",
+      "b": "A file compression standard",
+      "c": "A privacy law for web content",
+      "d": "A DRM system for streaming video",
+      "answer": "a",
+      "category": "cyber"
+    },
+    {
+      "q": "What is a promise in JavaScript?",
+      "a": "A guarantee that code has no bugs",
+      "b": "A contract between two APIs",
+      "c": "An object representing the eventual result of an async operation",
+      "d": "A type of web worker",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What does the 'traceroute' command show?",
+      "a": "All open ports on a server",
+      "b": "The path packets take to reach a destination",
+      "c": "A list of all DNS records for a domain",
+      "d": "The current network bandwidth usage",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is the purpose of a Dockerfile?",
+      "a": "To document a project's API endpoints",
+      "b": "To list all project dependencies",
+      "c": "To configure network settings for containers",
+      "d": "To define the steps to build a Docker container image",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is responsive web design?",
+      "a": "Websites that adapt their layout to different screen sizes",
+      "b": "Websites that load faster on mobile",
+      "c": "Designing websites that respond to user clicks quickly",
+      "d": "Using server-side rendering for all pages",
+      "answer": "a",
+      "category": "web"
+    },
+    {
+      "q": "What is the difference between symmetric and asymmetric encryption?",
+      "a": "Symmetric is for files, asymmetric is for network traffic",
+      "b": "Symmetric uses one key; asymmetric uses a key pair",
+      "c": "Asymmetric is always faster than symmetric",
+      "d": "There is no practical difference",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "In SQL, what does a LEFT JOIN do?",
+      "a": "Returns all rows from the left table and matching rows from the right",
+      "b": "Returns only matching rows from both tables",
+      "c": "Returns all rows from both tables",
+      "d": "Returns only non-matching rows",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What does the localStorage API in browsers provide?",
+      "a": "Access to the server's file system",
+      "b": "Temporary storage that clears when the tab closes",
+      "c": "A way to store key-value data persistently in the browser",
+      "d": "Encrypted storage for passwords",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What is Agile methodology?",
+      "a": "A project management approach using iterative, incremental development",
+      "b": "Writing code as fast as possible",
+      "c": "A testing framework for web applications",
+      "d": "A deployment strategy for cloud apps",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is NAT (Network Address Translation)?",
+      "a": "A firewall rule for blocking IPs",
+      "b": "A method for encrypting DNS queries",
+      "c": "A wireless networking standard",
+      "d": "A technique that maps private IP addresses to public ones",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What is a WAF (Web Application Firewall)?",
+      "a": "A framework for building web apps",
+      "b": "A tool that filters and monitors HTTP traffic to protect web apps",
+      "c": "A wireless access frequency manager",
+      "d": "A code linting tool for web projects",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the Virtual DOM in React?",
+      "a": "A DOM that only exists on the server",
+      "b": "A DOM specifically for virtual reality apps",
+      "c": "A copy of the DOM kept in memory that React diffs before updating the real DOM",
+      "d": "The DOM rendered inside an iframe",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What is a cron job?",
+      "a": "A time-based task scheduler in Unix-like systems",
+      "b": "A background process that monitors CPU usage",
+      "c": "A one-time scheduled deployment",
+      "d": "A job queue for database migrations",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is the purpose of an ORM in software development?",
+      "a": "Optimizing Runtime Memory",
+      "b": "Mapping objects to database tables",
+      "c": "Managing network routes",
+      "d": "Compiling source code",
+      "answer": "b",
+      "category": "dev"
     }
   ],
   "hard": [
@@ -542,6 +1442,456 @@
       "c": "A lossless data compression algorithm",
       "d": "A RAID configuration for redundancy",
       "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the time complexity of inserting into a balanced BST?",
+      "a": "O(1)",
+      "b": "O(n)",
+      "c": "O(log n)",
+      "d": "O(n log n)",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "In the context of CPU caches, what is a 'cache line'?",
+      "a": "A queue of pending memory requests",
+      "b": "The wire connecting CPU to RAM",
+      "c": "The smallest unit of data transferred between cache and main memory",
+      "d": "A log of cache hit/miss ratios",
+      "answer": "c",
+      "category": "tech"
+    },
+    {
+      "q": "What is Spectre (the CPU vulnerability)?",
+      "a": "A side-channel attack exploiting speculative execution in processors",
+      "b": "A virus that spreads through email attachments",
+      "c": "A ransomware variant targeting Intel CPUs",
+      "d": "A flaw in AES encryption on certain hardware",
+      "answer": "a",
+      "category": "cyber"
+    },
+    {
+      "q": "What is a bloom filter?",
+      "a": "An image processing algorithm for blur effects",
+      "b": "A network packet filter used in firewalls",
+      "c": "A CSS filter for visual effects",
+      "d": "A probabilistic data structure that can tell if an element is definitely not in a set",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is the purpose of the 'volatile' keyword in Java?",
+      "a": "Marks a variable as constant",
+      "b": "Prevents garbage collection of the variable",
+      "c": "Ensures the variable is always read from main memory, not a thread cache",
+      "d": "Makes the variable accessible only within the current method",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is HSTS (HTTP Strict Transport Security)?",
+      "a": "A header that forces browsers to use HTTPS for all future requests to a domain",
+      "b": "A protocol for securing FTP transfers",
+      "c": "A firewall rule for blocking HTTP traffic",
+      "d": "An encryption standard for cookies",
+      "answer": "a",
+      "category": "cyber"
+    },
+    {
+      "q": "What does the Linux 'oom-killer' do?",
+      "a": "Shuts down the system when temperatures are too high",
+      "b": "Kills orphaned background processes after logout",
+      "c": "Removes old log files to free disk space",
+      "d": "Terminates processes when the system runs critically low on memory",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What are CRDTs (Conflict-free Replicated Data Types)?",
+      "a": "Data structures that can be replicated and merged without conflicts",
+      "b": "A database indexing strategy for fast reads",
+      "c": "A method for encrypting replicated databases",
+      "d": "A type of RAID configuration",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is the 'thundering herd' problem?",
+      "a": "When too many users visit a website at the same time",
+      "b": "When a DDoS attack uses animal botnets",
+      "c": "When many waiting processes are woken up but only one can proceed, wasting resources",
+      "d": "When hard drives make loud noises under heavy load",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is Return-Oriented Programming (ROP)?",
+      "a": "A functional programming paradigm based on return values",
+      "b": "A technique for refactoring functions to use early returns",
+      "c": "A programming style where every function must return a value",
+      "d": "An exploit technique that chains existing code snippets to execute arbitrary operations",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the Split-Brain problem in distributed systems?",
+      "a": "When a network partition causes two halves of a cluster to operate independently",
+      "b": "When a CPU's L1 and L2 caches become desynchronized",
+      "c": "When two developers edit the same file simultaneously",
+      "d": "When a load balancer sends traffic to the wrong data center",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is mTLS (mutual TLS)?",
+      "a": "A multi-layered encryption protocol",
+      "b": "A mobile-specific version of TLS",
+      "c": "TLS that uses multiple cipher suites simultaneously",
+      "d": "TLS where both client and server authenticate each other with certificates",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "What is an eBPF program?",
+      "a": "An encrypted backup file program",
+      "b": "A browser plugin framework",
+      "c": "A sandboxed program that runs in the Linux kernel without modifying kernel source",
+      "d": "An embedded BIOS firmware program",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "In x86 assembly, what does the 'NOP sled' technique achieve in exploits?",
+      "a": "Encrypts shellcode to avoid detection",
+      "b": "Creates a landing zone of no-op instructions so execution slides into the payload",
+      "c": "Slows down execution to avoid rate limiting",
+      "d": "Removes stack canaries from memory",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the 'happens-before' relationship in Java's memory model?",
+      "a": "A formal ordering guarantee ensuring memory visibility between threads",
+      "b": "A guarantee about physical time ordering of operations",
+      "c": "A rule that constructor code always runs before method calls",
+      "d": "The order in which classes are loaded by the JVM",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is Raft in distributed computing?",
+      "a": "A random fault-testing framework",
+      "b": "A log shipping protocol for databases",
+      "c": "A consensus algorithm designed to be more understandable than Paxos",
+      "d": "A container networking overlay protocol",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is ASLR (Address Space Layout Randomization)?",
+      "a": "Randomly assigning ports to services",
+      "b": "Shuffling database row order for security",
+      "c": "A security technique that randomizes memory addresses used by a process",
+      "d": "Randomizing DNS query routing for load balancing",
+      "answer": "c",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the difference between a B-tree and a B+ tree?",
+      "a": "B+ trees are always binary; B-trees are not",
+      "b": "B+ trees are unbalanced; B-trees are balanced",
+      "c": "There is no practical difference",
+      "d": "B-trees store data in all nodes; B+ trees store data only in leaf nodes",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is a 'write-ahead log' (WAL) in databases?",
+      "a": "A log that records queries before they are optimized",
+      "b": "A log of all users who have write access",
+      "c": "A technique where changes are written to a log before being applied to the database",
+      "d": "A queue of pending write operations sorted by priority",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is DNS cache poisoning?",
+      "a": "Overloading a DNS server with requests",
+      "b": "Physically destroying DNS server hardware",
+      "c": "Encrypting DNS responses so they can't be read",
+      "d": "Injecting forged DNS records into a resolver's cache to redirect traffic",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the purpose of the 'unsafe' keyword in Rust?",
+      "a": "It marks code that hasn't been tested",
+      "b": "It flags deprecated functions",
+      "c": "It allows operations that bypass Rust's safety guarantees, like raw pointer dereferencing",
+      "d": "It disables the borrow checker for the entire file",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is a 'sidecar' pattern in microservices?",
+      "a": "A helper container deployed alongside the main container to handle cross-cutting concerns",
+      "b": "A backup service that takes over when the primary fails",
+      "c": "A testing pattern that runs services side by side",
+      "d": "A database replication strategy",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is time-of-check to time-of-use (TOCTOU)?",
+      "a": "A performance metric for API response times",
+      "b": "A caching strategy that checks freshness before serving",
+      "c": "A timestamp synchronization protocol",
+      "d": "A vulnerability where a resource changes between verification and use",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the primary innovation of the Transformer architecture in AI?",
+      "a": "Using convolutional layers for text",
+      "b": "Replacing recurrence with self-attention mechanisms",
+      "c": "Using reinforcement learning for language tasks",
+      "d": "Compressing models to run on mobile devices",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What problem does consistent hashing solve?",
+      "a": "Minimizing key redistribution when nodes are added or removed from a distributed system",
+      "b": "Ensuring passwords are hashed the same way across systems",
+      "c": "Preventing hash collisions in hash tables",
+      "d": "Making hash functions run in constant time",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is a 'quorum' in distributed databases?",
+      "a": "The maximum number of nodes allowed in a cluster",
+      "b": "A backup strategy using an odd number of replicas",
+      "c": "The minimum number of nodes that must agree for an operation to succeed",
+      "d": "A load balancing algorithm for read queries",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is Rowhammer?",
+      "a": "A brute-force password cracking tool",
+      "b": "A technique for optimizing database row lookups",
+      "c": "A DDoS tool that hammers web servers with requests",
+      "d": "A hardware vulnerability where repeated memory access can flip bits in adjacent rows",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the 'Two Generals Problem'?",
+      "a": "A thought experiment proving reliable communication is impossible over an unreliable channel",
+      "b": "A problem about load balancing two servers",
+      "c": "An algorithm for two-phase commit in databases",
+      "d": "A game theory problem about competing AI systems",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is vectorized query execution in databases?",
+      "a": "Running queries in a vector database for AI embeddings",
+      "b": "Executing queries across multiple database servers in parallel",
+      "c": "Processing data in batches using SIMD-style operations for better CPU efficiency",
+      "d": "Converting SQL queries to vector graphics",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is the halting problem?",
+      "a": "The difficulty of stopping infinite loops in production",
+      "b": "A bug where programs halt unexpectedly on certain inputs",
+      "c": "The challenge of gracefully shutting down distributed systems",
+      "d": "The proven impossibility of writing a program that determines if any arbitrary program will halt",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is a covert channel in security?",
+      "a": "An encrypted VPN tunnel",
+      "b": "A hidden communication path that transfers information in violation of security policy",
+      "c": "A secure API endpoint that requires authentication",
+      "d": "A private messaging feature in social media",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the difference between horizontal and vertical scaling?",
+      "a": "Horizontal is for databases, vertical is for web servers",
+      "b": "Vertical is cheaper but horizontal is faster",
+      "c": "They are different names for the same thing",
+      "d": "Horizontal adds more machines; vertical adds more power to existing machines",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What is the Linux kernel's Copy-on-Write (CoW) optimization for fork()?",
+      "a": "It copies the parent process to a backup before creating the child",
+      "b": "It writes the child process to disk instead of RAM",
+      "c": "Parent and child share memory pages until one writes, triggering a copy",
+      "d": "It copies only the stack, not the heap",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is 'request smuggling' in web security?",
+      "a": "Sending requests through a VPN to hide the origin",
+      "b": "Embedding executable code in image file uploads",
+      "c": "Bypassing rate limits by distributing requests across IPs",
+      "d": "Exploiting differences in how front-end and back-end servers parse HTTP requests",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the significance of P=NP in computer science?",
+      "a": "If true, every problem whose solution can be verified quickly can also be solved quickly",
+      "b": "It determines whether parallel computing is faster than sequential",
+      "c": "It proves that all programs eventually halt",
+      "d": "It determines the minimum memory needed for any algorithm",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is kernel bypass networking (e.g., DPDK)?",
+      "a": "Routing network traffic around firewalls",
+      "b": "A technique for hiding network traffic from the OS",
+      "c": "Allowing user-space applications to process network packets without going through the kernel",
+      "d": "Using the kernel to bypass slow network switches",
+      "answer": "c",
+      "category": "tech"
+    },
+    {
+      "q": "What is differential privacy?",
+      "a": "A mathematical framework that quantifies privacy loss when sharing aggregate data",
+      "b": "Encrypting each user's data with a different key",
+      "c": "Storing personal data in separate databases",
+      "d": "A GDPR compliance technique for deleting user data",
+      "answer": "a",
+      "category": "cyber"
+    },
+    {
+      "q": "What is Hyrum's Law in software engineering?",
+      "a": "All bugs will eventually be found given enough users",
+      "b": "Software complexity doubles every 18 months",
+      "c": "Any interface will eventually be misused",
+      "d": "With enough users, every observable behavior of your system will be depended on by somebody",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is memory-mapped I/O?",
+      "a": "Using RAM as a substitute for hard drive storage",
+      "b": "Creating a map of all I/O ports on the motherboard",
+      "c": "Mapping device registers to memory addresses so the CPU accesses hardware via normal memory operations",
+      "d": "Storing I/O buffers in virtual memory",
+      "answer": "c",
+      "category": "tech"
+    },
+    {
+      "q": "What is a 'phantom read' in database isolation levels?",
+      "a": "Reading data from a table that has been dropped",
+      "b": "Reading corrupted data due to disk errors",
+      "c": "Accessing a read replica that is behind the primary",
+      "d": "A transaction seeing new rows inserted by another transaction during re-reads",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is the purpose of Intel SGX (Software Guard Extensions)?",
+      "a": "Accelerating graphics rendering in software",
+      "b": "Providing hardware-based memory encryption for isolated code execution (enclaves)",
+      "c": "Extending the x86 instruction set for server workloads",
+      "d": "Improving SSD performance through hardware encryption",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is 'tail call optimization'?",
+      "a": "A compiler optimization that reuses the current stack frame for recursive calls in tail position",
+      "b": "Optimizing the last line of every function for speed",
+      "c": "Removing unused code at the end of files during compilation",
+      "d": "Prioritizing the last task in a job queue",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is a 'confused deputy' problem in security?",
+      "a": "When a privileged program is tricked into misusing its authority on behalf of an attacker",
+      "b": "When an admin accidentally grants the wrong permissions",
+      "c": "When two security tools conflict with each other",
+      "d": "When a firewall rule is misconfigured",
+      "answer": "a",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the primary advantage of an LSM tree over a B-tree for writes?",
+      "a": "LSM trees use less memory",
+      "b": "LSM trees don't need disk storage",
+      "c": "LSM trees convert random writes to sequential writes, improving write throughput",
+      "d": "LSM trees support more data types",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is a 'zero-knowledge proof'?",
+      "a": "Proving you have no knowledge of a security breach",
+      "b": "An authentication method that requires no password",
+      "c": "A cryptographic proof that a system has zero vulnerabilities",
+      "d": "Proving a statement is true without revealing any information beyond its validity",
+      "answer": "d",
+      "category": "cyber"
+    },
+    {
+      "q": "What is NUMA (Non-Uniform Memory Access)?",
+      "a": "A memory architecture where access time depends on the memory location relative to a processor",
+      "b": "A networking protocol for non-uniform data packets",
+      "c": "A database sharding strategy",
+      "d": "A type of SSD that has variable read speeds",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "What is linearizability in distributed systems?",
+      "a": "Storing data in a linear structure",
+      "b": "Processing all requests in a single queue",
+      "c": "Scaling a system linearly with added resources",
+      "d": "Ensuring operations appear to execute instantaneously at some point between invocation and response",
+      "answer": "d",
+      "category": "dev"
+    },
+    {
+      "q": "What is the 'Swiss cheese model' applied to security?",
+      "a": "Layering multiple imperfect defenses so holes in one layer are covered by another",
+      "b": "Using multiple security products from different vendors",
+      "c": "A penetration testing methodology that finds holes in defenses",
+      "d": "Encrypting data with multiple algorithms sequentially",
+      "answer": "a",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the 'epoch' concept in distributed consensus protocols like Raft?",
+      "a": "The time it takes for a heartbeat round-trip",
+      "b": "A monotonically increasing term number that helps detect stale leaders",
+      "c": "The maximum duration a leader can hold power",
+      "d": "The interval between log compaction events",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is 'heap spraying' in exploit development?",
+      "a": "Filling heap memory with copies of shellcode to increase the chance of hitting it",
+      "b": "Clearing the heap to prevent forensic analysis",
+      "c": "Spraying network packets at a target's memory allocator",
+      "d": "A technique for corrupting heap metadata to trigger crashes",
+      "answer": "a",
       "category": "cyber"
     }
   ]
