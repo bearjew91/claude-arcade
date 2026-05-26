@@ -1,6 +1,6 @@
 {
   "name": "claude-arcade",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Dev Hangman — guess tech terms while Claude works in a split pane",
   "main": "index.js",
   "bin": {
