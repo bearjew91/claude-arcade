@@ -9,7 +9,7 @@
     {
       "name": "claude-arcade",
       "description": "Terminal games while Claude works — Dev Hangman and Tech Trivia in a split pane",
-      "version": "3.3.0",
+      "version": "4.0.0",
       "source": "./"
     }
   ]
