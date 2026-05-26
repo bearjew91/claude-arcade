@@ -1,0 +1,548 @@
+{
+  "easy": [
+    {
+      "q": "What does HTML stand for?",
+      "a": "Hyper Text Markup Language",
+      "b": "High Tech Modern Language",
+      "c": "Home Tool Markup Language",
+      "d": "Hyperlink Text Management Language",
+      "answer": "a",
+      "category": "web"
+    },
+    {
+      "q": "What does CPU stand for?",
+      "a": "Central Process Unit",
+      "b": "Computer Personal Unit",
+      "c": "Central Processing Unit",
+      "d": "Core Processing Utility",
+      "answer": "c",
+      "category": "tech"
+    },
+    {
+      "q": "Which company created JavaScript?",
+      "a": "Microsoft",
+      "b": "Netscape",
+      "c": "Google",
+      "d": "Apple",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What does CSS stand for?",
+      "a": "Computer Style Sheets",
+      "b": "Creative Style System",
+      "c": "Cascading Style Sheets",
+      "d": "Colorful Style Sheets",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What is the main purpose of a firewall?",
+      "a": "Speed up internet",
+      "b": "Block unauthorized access",
+      "c": "Store passwords",
+      "d": "Compress files",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What does URL stand for?",
+      "a": "Universal Resource Locator",
+      "b": "Uniform Resource Locator",
+      "c": "United Resource Link",
+      "d": "Universal Reference Link",
+      "answer": "b",
+      "category": "web"
+    },
+    {
+      "q": "Which of these is a programming language?",
+      "a": "Photoshop",
+      "b": "Python",
+      "c": "PowerPoint",
+      "d": "Premiere",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What does RAM stand for?",
+      "a": "Read Access Memory",
+      "b": "Run Application Memory",
+      "c": "Random Access Memory",
+      "d": "Rapid Action Memory",
+      "answer": "c",
+      "category": "tech"
+    },
+    {
+      "q": "What is phishing?",
+      "a": "A type of malware",
+      "b": "A brute force attack",
+      "c": "Tricking people into giving up personal info",
+      "d": "Hacking a Wi-Fi network",
+      "answer": "c",
+      "category": "cyber"
+    },
+    {
+      "q": "What does 'git push' do?",
+      "a": "Downloads code from a server",
+      "b": "Deletes a branch",
+      "c": "Uploads local changes to a remote repo",
+      "d": "Creates a new repository",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What is an IP address?",
+      "a": "A website's password",
+      "b": "A unique number identifying a device on a network",
+      "c": "An email protocol",
+      "d": "A type of malware",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "Which symbol starts a comment in Python?",
+      "a": "//",
+      "b": "/*",
+      "c": "#",
+      "d": "--",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What does SSD stand for?",
+      "a": "Solid State Drive",
+      "b": "Super Speed Disk",
+      "c": "System Storage Device",
+      "d": "Static State Drive",
+      "answer": "a",
+      "category": "tech"
+    },
+    {
+      "q": "What is a VPN used for?",
+      "a": "Speeding up downloads",
+      "b": "Creating private encrypted connections",
+      "c": "Blocking ads",
+      "d": "Hosting websites",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "Which HTTP status code means 'Not Found'?",
+      "a": "200",
+      "b": "301",
+      "c": "404",
+      "d": "500",
+      "answer": "c",
+      "category": "web"
+    },
+    {
+      "q": "What is the purpose of a database?",
+      "a": "To design websites",
+      "b": "To store and organize data",
+      "c": "To protect from viruses",
+      "d": "To send emails",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What does Wi-Fi stand for?",
+      "a": "Wireless Fidelity",
+      "b": "Wide Frequency Internet",
+      "c": "Wired File Integration",
+      "d": "It's a brand name, not an acronym",
+      "answer": "d",
+      "category": "tech"
+    },
+    {
+      "q": "What is two-factor authentication?",
+      "a": "Using two passwords",
+      "b": "Logging in from two devices",
+      "c": "Verifying identity with two different methods",
+      "d": "Having two user accounts",
+      "answer": "c",
+      "category": "cyber"
+    },
+    {
+      "q": "What does JSON stand for?",
+      "a": "JavaScript Object Notation",
+      "b": "Java Standard Object Naming",
+      "c": "Joint System Open Network",
+      "d": "JavaScript Online System",
+      "answer": "a",
+      "category": "dev"
+    },
+    {
+      "q": "What is cloud computing?",
+      "a": "Computing done during cloudy weather",
+      "b": "Storing and accessing data over the internet",
+      "c": "A type of encryption",
+      "d": "Computing using quantum processors",
+      "answer": "b",
+      "category": "tech"
+    }
+  ],
+  "medium": [
+    {
+      "q": "What is SQL injection?",
+      "a": "Adding SQL to speed up queries",
+      "b": "Inserting malicious SQL through user input",
+      "c": "A database backup method",
+      "d": "Converting NoSQL to SQL",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is a container in DevOps?",
+      "a": "A physical server rack",
+      "b": "A lightweight isolated environment for running apps",
+      "c": "A type of database",
+      "d": "A network security tool",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What does API stand for?",
+      "a": "Automated Program Interface",
+      "b": "Application Programming Interface",
+      "c": "Advanced Protocol Integration",
+      "d": "Application Process Interaction",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is a DDoS attack?",
+      "a": "Stealing data from a database",
+      "b": "Flooding a server with traffic to take it down",
+      "c": "Breaking encryption",
+      "d": "Injecting malware into software updates",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the time complexity of binary search?",
+      "a": "O(n)",
+      "b": "O(n²)",
+      "c": "O(log n)",
+      "d": "O(1)",
+      "answer": "c",
+      "category": "dev"
+    },
+    {
+      "q": "What does DNS do?",
+      "a": "Encrypts network traffic",
+      "b": "Translates domain names to IP addresses",
+      "c": "Manages database connections",
+      "d": "Monitors server health",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is a man-in-the-middle attack?",
+      "a": "Physically stealing a computer",
+      "b": "Intercepting communication between two parties",
+      "c": "Guessing someone's password",
+      "d": "Planting a virus in an email",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is Docker primarily used for?",
+      "a": "Version control",
+      "b": "Containerization of applications",
+      "c": "Database management",
+      "d": "Network monitoring",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is a race condition?",
+      "a": "When two programs compete for speed",
+      "b": "When output depends on timing of uncontrolled events",
+      "c": "A type of sorting algorithm",
+      "d": "When a CPU overheats",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is HTTPS vs HTTP?",
+      "a": "HTTPS is faster",
+      "b": "HTTPS uses encryption (TLS/SSL)",
+      "c": "HTTPS only works on mobile",
+      "d": "There is no difference",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is a reverse proxy?",
+      "a": "A proxy that blocks outgoing traffic",
+      "b": "A server that forwards requests to backend servers",
+      "c": "A tool for reversing encryption",
+      "d": "A backup DNS server",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is CI/CD?",
+      "a": "Code Integration / Code Deployment",
+      "b": "Continuous Integration / Continuous Delivery",
+      "c": "Central Intelligence / Central Database",
+      "d": "Cloud Infrastructure / Cloud Design",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is XSS (Cross-Site Scripting)?",
+      "a": "Running scripts across multiple servers",
+      "b": "Injecting malicious scripts into web pages",
+      "c": "A CSS framework",
+      "d": "A cross-platform testing tool",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the difference between TCP and UDP?",
+      "a": "TCP is wireless, UDP is wired",
+      "b": "TCP guarantees delivery, UDP does not",
+      "c": "UDP is more secure than TCP",
+      "d": "TCP is only for email",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is Git rebasing?",
+      "a": "Deleting a repository",
+      "b": "Moving a branch's base to a new commit",
+      "c": "Creating a new remote",
+      "d": "Reverting all changes",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is OAuth?",
+      "a": "A programming language",
+      "b": "An authorization framework for third-party access",
+      "c": "A type of encryption",
+      "d": "A database protocol",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What does REST stand for in REST API?",
+      "a": "Remote Execution Standard Technology",
+      "b": "Representational State Transfer",
+      "c": "Real-time Event Stream Technology",
+      "d": "Reliable Endpoint Service Transfer",
+      "answer": "b",
+      "category": "web"
+    },
+    {
+      "q": "What is a memory leak?",
+      "a": "When RAM is physically damaged",
+      "b": "When a program fails to release unused memory",
+      "c": "When data is stolen from memory",
+      "d": "When the hard drive is full",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is Kubernetes used for?",
+      "a": "Frontend development",
+      "b": "Container orchestration",
+      "c": "Database queries",
+      "d": "Email routing",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is social engineering in cybersecurity?",
+      "a": "Building social media apps",
+      "b": "Manipulating people to reveal confidential info",
+      "c": "Engineering network infrastructure",
+      "d": "Creating chatbots",
+      "answer": "b",
+      "category": "cyber"
+    }
+  ],
+  "hard": [
+    {
+      "q": "What is a zero-day exploit?",
+      "a": "An attack on day one of a product launch",
+      "b": "An attack using a vulnerability unknown to the vendor",
+      "c": "A virus that activates at midnight",
+      "d": "A denial of service lasting zero days",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the CAP theorem?",
+      "a": "You can't have Caching, APIs, and Performance together",
+      "b": "A distributed system can't guarantee Consistency, Availability, and Partition tolerance simultaneously",
+      "c": "Code, Architecture, and Patterns must be balanced",
+      "d": "Complexity Always Propagates in large systems",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is a rainbow table attack?",
+      "a": "Exploiting colorful UI elements",
+      "b": "Using precomputed hash tables to crack passwords",
+      "c": "A multi-vector DDoS attack",
+      "d": "Intercepting fiber optic signals",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is eventual consistency?",
+      "a": "All nodes always have the same data",
+      "b": "Given enough time, all replicas converge to the same value",
+      "c": "Data is consistent only at the end of a transaction",
+      "d": "Consistency that depends on network speed",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is a side-channel attack?",
+      "a": "Attacking through a secondary network interface",
+      "b": "Exploiting physical implementation leaks like timing or power usage",
+      "c": "SQL injection through form sidebars",
+      "d": "Man-in-the-middle via a side proxy",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the difference between concurrency and parallelism?",
+      "a": "They are the same thing",
+      "b": "Concurrency is managing multiple tasks; parallelism is executing them simultaneously",
+      "c": "Parallelism is for single-core, concurrency for multi-core",
+      "d": "Concurrency is faster than parallelism",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is a CSRF attack?",
+      "a": "Cracking Server-side Resource Files",
+      "b": "Tricking a user's browser into making unwanted requests",
+      "c": "Cross-Server Resource Flooding",
+      "d": "Corrupted Session Recovery Failure",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the Byzantine Generals Problem?",
+      "a": "A CPU scheduling algorithm",
+      "b": "Achieving consensus when some participants may be unreliable",
+      "c": "A sorting problem with O(n log n) complexity",
+      "d": "Load balancing across multiple data centers",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is AES-256?",
+      "a": "An antivirus engine",
+      "b": "A symmetric encryption standard with 256-bit keys",
+      "c": "An authentication protocol",
+      "d": "A network routing algorithm",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is WebAssembly (WASM)?",
+      "a": "A new JavaScript framework",
+      "b": "A binary instruction format for running compiled code in browsers",
+      "c": "A CSS preprocessor",
+      "d": "A server-side rendering engine",
+      "answer": "b",
+      "category": "web"
+    },
+    {
+      "q": "What is a Merkle tree used for?",
+      "a": "Rendering 3D graphics",
+      "b": "Efficiently verifying data integrity in large datasets",
+      "c": "Sorting database indexes",
+      "d": "Managing DNS records",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is certificate pinning?",
+      "a": "Physically securing server hardware",
+      "b": "Associating a host with its expected certificate to prevent MITM",
+      "c": "Pinning a certificate to a browser bookmark",
+      "d": "Encrypting SSL certificates at rest",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What does ACID stand for in databases?",
+      "a": "Asynchronous, Cached, Indexed, Distributed",
+      "b": "Atomicity, Consistency, Isolation, Durability",
+      "c": "Automated, Concurrent, Immediate, Durable",
+      "d": "Access, Control, Integration, Design",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is a supply chain attack?",
+      "a": "Attacking logistics software",
+      "b": "Compromising a dependency or vendor to target downstream users",
+      "c": "Stealing products during shipping",
+      "d": "Breaking encryption in e-commerce",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the difference between a mutex and a semaphore?",
+      "a": "They are the same thing",
+      "b": "A mutex allows one thread; a semaphore allows a set number",
+      "c": "Mutex is for networks; semaphore is for CPUs",
+      "d": "Semaphores are faster than mutexes",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is homomorphic encryption?",
+      "a": "Encryption that only works on similar data types",
+      "b": "Performing computations on encrypted data without decrypting it",
+      "c": "A symmetric encryption method",
+      "d": "Encrypting data in a homogeneous network",
+      "answer": "b",
+      "category": "cyber"
+    },
+    {
+      "q": "What is the actor model in computing?",
+      "a": "A UI design pattern for user roles",
+      "b": "A concurrency model where actors communicate via messages",
+      "c": "A testing methodology using mock actors",
+      "d": "A machine learning classification approach",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is BGP and why is it critical?",
+      "a": "Binary Gateway Protocol — encrypts all internet traffic",
+      "b": "Border Gateway Protocol — routes traffic between internet networks",
+      "c": "Base Graphics Pipeline — renders web content",
+      "d": "Batch Generation Process — handles server requests",
+      "answer": "b",
+      "category": "tech"
+    },
+    {
+      "q": "What is a canary deployment?",
+      "a": "Deploying to a test environment only",
+      "b": "Gradually rolling out changes to a small subset of users first",
+      "c": "Deploying at scheduled low-traffic times",
+      "d": "A deployment that triggers alerts",
+      "answer": "b",
+      "category": "dev"
+    },
+    {
+      "q": "What is Perfect Forward Secrecy?",
+      "a": "A backup strategy that never loses data",
+      "b": "Ensuring session keys can't be compromised even if the private key is leaked later",
+      "c": "A lossless data compression algorithm",
+      "d": "A RAID configuration for redundancy",
+      "answer": "b",
+      "category": "cyber"
+    }
+  ]
+}

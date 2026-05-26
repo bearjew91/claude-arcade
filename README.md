@@ -1,21 +1,14 @@
-# Dev Hangman 🎮
+# Claude Arcade 🕹️
 
-A polished terminal hangman game for Claude Code — guess tech terms while Claude works!
+Games for your terminal while Claude works — play in a split pane during auto mode!
 
-## What is it?
+## Games
 
-A Claude Code plugin that launches **Dev Hangman** in a Windows Terminal split pane. You play hangman with programming and devops terminology while Claude crunches through your tasks.
+### ⌨ Dev Hangman
+Guess tech terms letter by letter. 180 words across 6 categories: languages, tools, concepts, devops, web, and git.
 
-## Word Categories
-
-- **Languages** — javascript, rust, python, kotlin, haskell...
-- **Tools** — docker, kubernetes, webpack, postgres, redis...
-- **Concepts** — recursion, middleware, polymorphism, closure...
-- **DevOps** — pipeline, container, microservice, canary...
-- **Web** — component, hydration, viewport, graphql...
-- **Git** — rebase, cherry, bisect, worktree, reflog...
-
-180 tech terms across 6 categories.
+### 🧠 Tech Trivia
+ABCD multiple choice questions about cyber security, dev, web, and tech. 60 questions from easy to hard, with streak bonuses and retro-style rankings.
 
 ## Install
 
@@ -26,30 +19,28 @@ claude plugin install claude-arcade
 
 ## Usage
 
-- `/play` — launch the game in a split pane
-- `/stats` — view your win rate, streaks, and category breakdown
-- The game also auto-launches via hook when Claude starts working
+- `/play` — launch the arcade in a split pane
+- `/stats` — view your scores
+- Auto-launches when Claude starts working (via PostToolUse hook)
+
+## Update
+
+```bash
+claude plugin marketplace update claude-arcade && claude plugin update claude-arcade@claude-arcade
+```
 
 ## Controls
 
 | Key | Action |
 |-----|--------|
-| `A-Z` | Guess a letter |
-| `N` | New game (after win/loss) |
-| `S` | View stats (after win/loss) |
+| `1` / `2` | Pick a game from the menu |
+| `A-Z` | Guess letters (Hangman) or answer (Trivia) |
+| `N` | New game |
+| `M` | Back to menu |
+| `S` | Stats |
 | `ESC` | Quit |
-
-## Features
-
-- ASCII hangman art with color stages
-- Category hints on each word
-- Lives progress bar
-- Color-coded keyboard showing used/correct/wrong letters
-- Persistent stats with category breakdown
-- Streak tracking
-- Zero dependencies — Node.js built-ins only
 
 ## Requirements
 
 - Node.js 18+
-- Windows Terminal (for split pane)
+- Windows Terminal (for split pane — falls back to new window)

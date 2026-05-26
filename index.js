@@ -7,6 +7,7 @@ const os = require('os');
 const LOCK_FILE = path.join(os.homedir(), '.claude', 'arcade.lock');
 const STATS_FILE = path.join(os.homedir(), '.claude', 'arcade-stats.json');
 const WORDS = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'words.json'), 'utf8'));
+const trivia = require('./trivia');
 
 // ── Lock management ──
 
@@ -22,25 +23,10 @@ process.on('exit', removeLock);
 process.on('SIGINT', () => { removeLock(); process.exit(0); });
 process.on('SIGTERM', () => { removeLock(); process.exit(0); });
 
-// ── Stats ──
-
-function loadStats() {
-  try {
-    return JSON.parse(fs.readFileSync(STATS_FILE, 'utf8'));
-  } catch {
-    return { played: 0, wins: 0, losses: 0, streak: 0, bestStreak: 0, categoryStats: {} };
-  }
-}
-function saveStats(stats) {
-  const dir = path.dirname(STATS_FILE);
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(STATS_FILE, JSON.stringify(stats, null, 2));
-}
-
 // ── ANSI helpers ──
 
 const ESC = '\x1b';
-const RESET = `${ESC}[0m`;
+const R = `${ESC}[0m`;
 const BOLD = `${ESC}[1m`;
 const DIM = `${ESC}[2m`;
 const GREEN = `${ESC}[32m`;
@@ -56,13 +42,26 @@ const BG_YELLOW = `${ESC}[43m${ESC}[30m`;
 const HIDE_CURSOR = `${ESC}[?25l`;
 const SHOW_CURSOR = `${ESC}[?25h`;
 
-function moveTo(row, col) { return `${ESC}[${row};${col}H`; }
 function clearScreen() { return `${ESC}[2J${ESC}[H`; }
 
-// ── Hangman art (8 stages: 0 = empty, 7 = dead) ──
+// ── Hangman Stats ──
+
+function loadHangmanStats() {
+  try {
+    return JSON.parse(fs.readFileSync(STATS_FILE, 'utf8'));
+  } catch {
+    return { played: 0, wins: 0, losses: 0, streak: 0, bestStreak: 0, categoryStats: {} };
+  }
+}
+function saveHangmanStats(stats) {
+  const dir = path.dirname(STATS_FILE);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(STATS_FILE, JSON.stringify(stats, null, 2));
+}
+
+// ── Hangman art ──
 
 const HANGMAN = [
-  // 0 - empty gallows
   [
     `  ┌───────┐ `,
     `  │       │ `,
@@ -73,75 +72,69 @@ const HANGMAN = [
     `  │         `,
     `  ╧═════════`,
   ],
-  // 1 - head
   [
     `  ┌───────┐ `,
     `  │       │ `,
-    `  │      ${YELLOW}O${RESET}  `,
+    `  │      ${YELLOW}O${R}  `,
     `  │         `,
     `  │         `,
     `  │         `,
     `  │         `,
     `  ╧═════════`,
   ],
-  // 2 - body
   [
     `  ┌───────┐ `,
     `  │       │ `,
-    `  │      ${YELLOW}O${RESET}  `,
-    `  │      ${WHITE}│${RESET}  `,
+    `  │      ${YELLOW}O${R}  `,
+    `  │      ${WHITE}│${R}  `,
     `  │         `,
     `  │         `,
     `  │         `,
     `  ╧═════════`,
   ],
-  // 3 - left arm
   [
     `  ┌───────┐ `,
     `  │       │ `,
-    `  │      ${YELLOW}O${RESET}  `,
-    `  │     ${WHITE}╱│${RESET}  `,
+    `  │      ${YELLOW}O${R}  `,
+    `  │     ${WHITE}╱│${R}  `,
     `  │         `,
     `  │         `,
     `  │         `,
     `  ╧═════════`,
   ],
-  // 4 - right arm
   [
     `  ┌───────┐ `,
     `  │       │ `,
-    `  │      ${YELLOW}O${RESET}  `,
-    `  │     ${WHITE}╱│╲${RESET} `,
+    `  │      ${YELLOW}O${R}  `,
+    `  │     ${WHITE}╱│╲${R} `,
     `  │         `,
     `  │         `,
     `  │         `,
     `  ╧═════════`,
   ],
-  // 5 - left leg
   [
     `  ┌───────┐ `,
     `  │       │ `,
-    `  │      ${YELLOW}O${RESET}  `,
-    `  │     ${WHITE}╱│╲${RESET} `,
-    `  │     ${WHITE}╱${RESET}   `,
+    `  │      ${YELLOW}O${R}  `,
+    `  │     ${WHITE}╱│╲${R} `,
+    `  │     ${WHITE}╱${R}   `,
     `  │         `,
     `  │         `,
     `  ╧═════════`,
   ],
-  // 6 - right leg
   [
     `  ┌───────┐ `,
     `  │       │ `,
-    `  │      ${RED}O${RESET}  `,
-    `  │     ${RED}╱│╲${RESET} `,
-    `  │     ${RED}╱ ╲${RESET} `,
+    `  │      ${RED}O${R}  `,
+    `  │     ${RED}╱│╲${R} `,
+    `  │     ${RED}╱ ╲${R} `,
     `  │         `,
     `  │         `,
     `  ╧═════════`,
   ],
 ];
 
-// ── Word selection ──
+// ── Hangman word selection ──
 
 function pickWord() {
   const categories = Object.keys(WORDS);
@@ -151,172 +144,92 @@ function pickWord() {
   return { word, category };
 }
 
-// ── Game state ──
+// ── Hangman game state ──
 
-function newGame() {
+function newHangmanGame() {
   const { word, category } = pickWord();
   return {
-    word,
-    category,
+    word, category,
     guessed: new Set(),
     wrong: [],
     maxWrong: 6,
-    won: false,
-    lost: false,
-    message: '',
-    messageColor: CYAN,
+    won: false, lost: false,
+    message: '', messageColor: CYAN,
   };
 }
 
-// ── Rendering ──
+// ── Hangman rendering ──
 
-function renderWord(state) {
-  return state.word
-    .split('')
-    .map(ch => {
-      if (state.guessed.has(ch)) {
-        return `${GREEN}${BOLD}${ch}${RESET}`;
-      } else if (state.won || state.lost) {
-        return `${RED}${BOLD}${ch}${RESET}`;
-      } else {
-        return `${DIM}_${RESET}`;
-      }
-    })
-    .join(' ');
+function renderHangmanWord(state) {
+  return state.word.split('').map(ch => {
+    if (state.guessed.has(ch)) return `${GREEN}${BOLD}${ch}${R}`;
+    else if (state.won || state.lost) return `${RED}${BOLD}${ch}${R}`;
+    else return `${DIM}_${R}`;
+  }).join(' ');
 }
 
-function renderKeyboard(state) {
+function renderHangmanKeyboard(state) {
   const rows = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'];
   return rows.map((row, i) => {
     const pad = i === 1 ? '  ' : i === 2 ? '    ' : '';
     const keys = row.split('').map(ch => {
-      if (state.word.includes(ch) && state.guessed.has(ch)) {
-        return `${BG_GREEN} ${ch} ${RESET}`;
-      } else if (state.wrong.includes(ch)) {
-        return `${BG_RED} ${ch} ${RESET}`;
-      } else if (state.guessed.has(ch)) {
-        return `${GRAY} ${ch} ${RESET}`;
-      } else {
-        return `${WHITE} ${ch} ${RESET}`;
-      }
+      if (state.word.includes(ch) && state.guessed.has(ch)) return `${BG_GREEN} ${ch} ${R}`;
+      else if (state.wrong.includes(ch)) return `${BG_RED} ${ch} ${R}`;
+      else if (state.guessed.has(ch)) return `${GRAY} ${ch} ${R}`;
+      else return `${WHITE} ${ch} ${R}`;
     }).join('');
     return `  ${pad}${keys}`;
   }).join('\n');
 }
 
-function renderProgressBar(state) {
-  const total = state.maxWrong;
-  const used = state.wrong.length;
-  const remaining = total - used;
+function renderHangmanProgressBar(state) {
+  const remaining = state.maxWrong - state.wrong.length;
   const filled = '█'.repeat(remaining);
-  const empty = '░'.repeat(used);
+  const empty = '░'.repeat(state.wrong.length);
   const color = remaining <= 2 ? RED : remaining <= 4 ? YELLOW : GREEN;
-  return `  ${color}${filled}${GRAY}${empty}${RESET} ${DIM}${remaining}/${total} lives${RESET}`;
+  return `  ${color}${filled}${GRAY}${empty}${R} ${DIM}${remaining}/${state.maxWrong} lives${R}`;
 }
 
-function render(state) {
+function renderHangman(state) {
   const out = [];
-
   out.push(clearScreen() + HIDE_CURSOR);
-
-  // Title
   out.push(`${CYAN}${BOLD}`);
-  out.push(`  ╔══════════════════════════════════╗`);
-  out.push(`  ║     ${MAGENTA}⌨${CYAN}  DEV HANGMAN  ${MAGENTA}⌨${CYAN}           ║`);
-  out.push(`  ╚══════════════════════════════════╝${RESET}`);
+  out.push(`  ╔══════════════════════════════════════════╗`);
+  out.push(`  ║     ${MAGENTA}⌨${CYAN}  DEV HANGMAN  ${MAGENTA}⌨${CYAN}                   ║`);
+  out.push(`  ╚══════════════════════════════════════════╝${R}`);
   out.push('');
-
-  // Category hint
-  const catLabel = state.category.toUpperCase();
-  out.push(`  ${DIM}Category:${RESET} ${BG_YELLOW} ${catLabel} ${RESET}`);
+  out.push(`  ${DIM}Category:${R} ${BG_YELLOW} ${state.category.toUpperCase()} ${R}`);
   out.push('');
-
-  // Hangman art
   const stage = Math.min(state.wrong.length, HANGMAN.length - 1);
-  for (const line of HANGMAN[stage]) {
-    out.push(line);
-  }
+  for (const line of HANGMAN[stage]) out.push(line);
   out.push('');
-
-  // Word display
-  out.push(`  ${renderWord(state)}`);
+  out.push(`  ${renderHangmanWord(state)}`);
   out.push('');
-
-  // Progress bar
-  out.push(renderProgressBar(state));
+  out.push(renderHangmanProgressBar(state));
   out.push('');
-
-  // Wrong letters
   if (state.wrong.length > 0) {
-    const wrongStr = state.wrong.map(ch => `${RED}${ch}${RESET}`).join(' ');
-    out.push(`  ${DIM}Wrong:${RESET} ${wrongStr}`);
+    out.push(`  ${DIM}Wrong:${R} ${state.wrong.map(ch => `${RED}${ch}${R}`).join(' ')}`);
   } else {
-    out.push(`  ${DIM}No wrong guesses yet${RESET}`);
+    out.push(`  ${DIM}No wrong guesses yet${R}`);
   }
   out.push('');
-
-  // Keyboard
-  out.push(renderKeyboard(state));
+  out.push(renderHangmanKeyboard(state));
   out.push('');
-
-  // Message
-  if (state.message) {
-    out.push(`  ${state.messageColor}${BOLD}${state.message}${RESET}`);
-    out.push('');
-  }
-
-  // Controls
+  if (state.message) out.push(`  ${state.messageColor}${BOLD}${state.message}${R}`);
+  out.push('');
   if (state.won || state.lost) {
-    out.push(`  ${CYAN}[N]${RESET} New Game  ${CYAN}[S]${RESET} Stats  ${CYAN}[Q]${RESET} Quit`);
+    out.push(`  ${CYAN}[N]${R} New Game  ${CYAN}[M]${R} Menu  ${CYAN}[Q]${R} Quit`);
   } else {
-    out.push(`  ${DIM}Type a letter to guess · ESC to quit${RESET}`);
+    out.push(`  ${DIM}Type a letter to guess · ESC to quit${R}`);
   }
-
   process.stdout.write(out.join('\n') + '\n');
 }
 
-// ── Stats display ──
+// ── Hangman input ──
 
-function renderStats() {
-  const s = loadStats();
-  const winRate = s.played > 0 ? Math.round((s.wins / s.played) * 100) : 0;
-  const out = [];
-
-  out.push(clearScreen());
-  out.push(`${CYAN}${BOLD}`);
-  out.push(`  ╔══════════════════════════════════╗`);
-  out.push(`  ║        📊  HANGMAN STATS          ║`);
-  out.push(`  ╚══════════════════════════════════╝${RESET}`);
-  out.push('');
-  out.push(`  ${WHITE}Games Played:  ${BOLD}${s.played}${RESET}`);
-  out.push(`  ${GREEN}Wins:          ${BOLD}${s.wins}${RESET}`);
-  out.push(`  ${RED}Losses:        ${BOLD}${s.losses}${RESET}`);
-  out.push(`  ${YELLOW}Win Rate:      ${BOLD}${winRate}%${RESET}`);
-  out.push(`  ${CYAN}Streak:        ${BOLD}${s.streak}${RESET}`);
-  out.push(`  ${MAGENTA}Best Streak:   ${BOLD}${s.bestStreak}${RESET}`);
-  out.push('');
-
-  const cats = Object.entries(s.categoryStats || {});
-  if (cats.length > 0) {
-    out.push(`  ${DIM}─── By Category ───${RESET}`);
-    for (const [cat, data] of cats) {
-      const catRate = data.played > 0 ? Math.round((data.wins / data.played) * 100) : 0;
-      out.push(`  ${BG_YELLOW} ${cat.toUpperCase()} ${RESET} ${data.wins}/${data.played} (${catRate}%)`);
-    }
-    out.push('');
-  }
-
-  out.push(`  ${DIM}Press any key to return...${RESET}`);
-
-  process.stdout.write(out.join('\n') + '\n');
-}
-
-// ── Input handling ──
-
-function handleGuess(ch, state) {
+function handleHangmanGuess(ch, state) {
   const letter = ch.toUpperCase();
-  if (!/^[A-Z]$/.test(letter)) return state;
-  if (state.won || state.lost) return state;
+  if (!/^[A-Z]$/.test(letter) || state.won || state.lost) return state;
 
   if (state.guessed.has(letter)) {
     state.message = `Already guessed '${letter}'`;
@@ -332,7 +245,7 @@ function handleGuess(ch, state) {
       state.won = true;
       state.message = '🎉 You got it!';
       state.messageColor = GREEN;
-      recordResult(state, true);
+      recordHangmanResult(state, true);
     } else {
       const remaining = state.word.split('').filter(c => !state.guessed.has(c)).length;
       state.message = `✓ Nice! ${remaining} letter${remaining === 1 ? '' : 's'} left`;
@@ -345,40 +258,124 @@ function handleGuess(ch, state) {
       state.lost = true;
       state.message = `💀 The word was: ${state.word}`;
       state.messageColor = RED;
-      recordResult(state, false);
+      recordHangmanResult(state, false);
     } else if (lives === 1) {
-      state.message = `✗ Last chance!`;
+      state.message = '✗ Last chance!';
       state.messageColor = RED;
     } else {
       state.message = `✗ Not in the word · ${lives} lives left`;
       state.messageColor = YELLOW;
     }
   }
-
   return state;
 }
 
-function recordResult(state, won) {
-  const stats = loadStats();
+function recordHangmanResult(state, won) {
+  const stats = loadHangmanStats();
   stats.played++;
-  if (won) {
-    stats.wins++;
-    stats.streak++;
-    stats.bestStreak = Math.max(stats.bestStreak, stats.streak);
-  } else {
-    stats.losses++;
-    stats.streak = 0;
-  }
+  if (won) { stats.wins++; stats.streak++; stats.bestStreak = Math.max(stats.bestStreak, stats.streak); }
+  else { stats.losses++; stats.streak = 0; }
   if (!stats.categoryStats) stats.categoryStats = {};
-  if (!stats.categoryStats[state.category]) {
-    stats.categoryStats[state.category] = { played: 0, wins: 0 };
-  }
+  if (!stats.categoryStats[state.category]) stats.categoryStats[state.category] = { played: 0, wins: 0 };
   stats.categoryStats[state.category].played++;
   if (won) stats.categoryStats[state.category].wins++;
-  saveStats(stats);
+  saveHangmanStats(stats);
 }
 
-// ── Main loop ──
+// ── Main Menu ──
+
+function renderMenu() {
+  const out = [];
+  out.push(clearScreen() + HIDE_CURSOR);
+  out.push('');
+  out.push(`${CYAN}${BOLD}`);
+  out.push(`  ╔══════════════════════════════════════════╗`);
+  out.push(`  ║                                          ║`);
+  out.push(`  ║   ${MAGENTA}▓▓▓${CYAN}  C L A U D E   A R C A D E  ${MAGENTA}▓▓▓${CYAN}   ║`);
+  out.push(`  ║                                          ║`);
+  out.push(`  ║   ${GRAY}${DIM}play while claude works${R}${CYAN}${BOLD}                 ║`);
+  out.push(`  ║                                          ║`);
+  out.push(`  ╠══════════════════════════════════════════╣`);
+  out.push(`  ║                                          ║`);
+  out.push(`  ║   ${GREEN}[1]${CYAN}  ${WHITE}⌨  Dev Hangman${R}${CYAN}${BOLD}                   ║`);
+  out.push(`  ║   ${GRAY}${DIM}     Guess tech terms letter by letter${R}${CYAN}${BOLD}  ║`);
+  out.push(`  ║                                          ║`);
+  out.push(`  ║   ${YELLOW}[2]${CYAN}  ${WHITE}🧠 Tech Trivia${R}${CYAN}${BOLD}                   ║`);
+  out.push(`  ║   ${GRAY}${DIM}     ABCD questions from easy to hard${R}${CYAN}${BOLD}  ║`);
+  out.push(`  ║                                          ║`);
+  out.push(`  ║   ${GRAY}[Q]${CYAN}  ${GRAY}Quit${R}${CYAN}${BOLD}                              ║`);
+  out.push(`  ║                                          ║`);
+  out.push(`  ╚══════════════════════════════════════════╝${R}`);
+  out.push('');
+  out.push(`  ${DIM}Press 1 or 2 to start${R}`);
+
+  process.stdout.write(out.join('\n') + '\n');
+}
+
+// ── Game loops ──
+
+function runHangman(stdin, goMenu) {
+  let state = newHangmanGame();
+  renderHangman(state);
+
+  const handler = (key) => {
+    if (key === '\x03') { process.stdout.write(SHOW_CURSOR + clearScreen()); process.exit(0); }
+    if (key === '\x1b') { stdin.removeListener('data', handler); goMenu(); return; }
+
+    if (state.won || state.lost) {
+      if (key === 'n' || key === 'N') { state = newHangmanGame(); renderHangman(state); }
+      else if (key === 'm' || key === 'M') { stdin.removeListener('data', handler); goMenu(); }
+      else if (key === 'q' || key === 'Q') { process.stdout.write(SHOW_CURSOR + clearScreen()); process.exit(0); }
+      return;
+    }
+
+    if (/^[a-zA-Z]$/.test(key)) {
+      state = handleHangmanGuess(key, state);
+      renderHangman(state);
+    }
+  };
+  stdin.on('data', handler);
+}
+
+function runTrivia(stdin, goMenu) {
+  let state = trivia.newGame();
+  let showingStats = false;
+  trivia.render(state);
+
+  const handler = (key) => {
+    if (key === '\x03') { process.stdout.write(SHOW_CURSOR + clearScreen()); process.exit(0); }
+    if (key === '\x1b') { stdin.removeListener('data', handler); goMenu(); return; }
+
+    if (showingStats) {
+      showingStats = false;
+      trivia.render(state);
+      return;
+    }
+
+    if (state.gameOver) {
+      if (key === 'n' || key === 'N') { state = trivia.newGame(); trivia.render(state); }
+      else if (key === 's' || key === 'S') { showingStats = true; trivia.renderStats(); }
+      else if (key === 'm' || key === 'M' || key === '\x1b') { stdin.removeListener('data', handler); goMenu(); }
+      else if (key === 'q' || key === 'Q') { process.stdout.write(SHOW_CURSOR + clearScreen()); process.exit(0); }
+      return;
+    }
+
+    if (state.revealed) {
+      state = trivia.nextQuestion(state);
+      trivia.render(state);
+      return;
+    }
+
+    const lower = key.toLowerCase();
+    if (['a', 'b', 'c', 'd'].includes(lower)) {
+      state = trivia.handleAnswer(lower, state);
+      trivia.render(state);
+    }
+  };
+  stdin.on('data', handler);
+}
+
+// ── Main ──
 
 function main() {
   writeLock();
@@ -388,58 +385,23 @@ function main() {
   stdin.resume();
   stdin.setEncoding('utf8');
 
-  let state = newGame();
-  let showingStats = false;
+  function goMenu() {
+    stdin.removeAllListeners('data');
+    renderMenu();
+    stdin.on('data', menuHandler);
+  }
 
-  render(state);
-
-  stdin.on('data', (key) => {
-    // Ctrl+C
-    if (key === '\x03') {
+  function menuHandler(key) {
+    if (key === '\x03' || key === '\x1b' || key === 'q' || key === 'Q') {
       process.stdout.write(SHOW_CURSOR + clearScreen());
       process.exit(0);
     }
+    if (key === '1') { stdin.removeListener('data', menuHandler); runHangman(stdin, goMenu); }
+    if (key === '2') { stdin.removeListener('data', menuHandler); runTrivia(stdin, goMenu); }
+  }
 
-    // Stats screen — any key returns
-    if (showingStats) {
-      showingStats = false;
-      render(state);
-      return;
-    }
-
-    // ESC / Q to quit
-    if (key === '\x1b' || key === 'q' || key === 'Q') {
-      if (state.won || state.lost) {
-        process.stdout.write(SHOW_CURSOR + clearScreen());
-        process.exit(0);
-      }
-      if (key === '\x1b') {
-        process.stdout.write(SHOW_CURSOR + clearScreen());
-        process.exit(0);
-      }
-    }
-
-    // Game over controls
-    if (state.won || state.lost) {
-      if (key === 'n' || key === 'N') {
-        state = newGame();
-        render(state);
-      } else if (key === 's' || key === 'S') {
-        showingStats = true;
-        renderStats();
-      } else if (key === 'q' || key === 'Q') {
-        process.stdout.write(SHOW_CURSOR + clearScreen());
-        process.exit(0);
-      }
-      return;
-    }
-
-    // Letter guess
-    if (/^[a-zA-Z]$/.test(key)) {
-      state = handleGuess(key, state);
-      render(state);
-    }
-  });
+  renderMenu();
+  stdin.on('data', menuHandler);
 }
 
 main();

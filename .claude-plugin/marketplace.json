@@ -8,8 +8,8 @@
   "plugins": [
     {
       "name": "claude-arcade",
-      "description": "Dev Hangman — guess tech terms while Claude works, in a split pane",
-      "version": "2.0.0",
+      "description": "Terminal games while Claude works — Dev Hangman and Tech Trivia in a split pane",
+      "version": "3.0.0",
       "source": "./"
     }
   ]
