@@ -59,12 +59,21 @@ function buildQuestionPool() {
   return pool;
 }
 
+function getTimeLimit(difficulty) {
+  if (difficulty === 'easy') return 15;
+  if (difficulty === 'medium') return 20;
+  return 25;
+}
+
 function newGame() {
   const pool = buildQuestionPool();
+  const firstQ = pool[0];
   return {
     pool, index: 0, score: 0, streak: 0, bestStreak: 0,
     correct: 0, total: 0, selected: null, revealed: false,
     gameOver: false, message: '', messageColor: '',
+    timeLeft: getTimeLimit(firstQ.difficulty),
+    timeMax: getTimeLimit(firstQ.difficulty),
   };
 }
 
@@ -142,6 +151,17 @@ function render(state) {
   const bar = '#'.repeat(Math.min(state.score, 20)) + '-'.repeat(Math.max(0, 20 - state.score));
   const barColor = state.score >= 40 ? GREEN : state.score >= 20 ? YELLOW : WHITE;
   out.push(`  ${YELLOW}Score:${R} ${barColor}[${bar}]${R} ${BOLD}${state.score}${R}  ${GREEN}Streak: ${BOLD}${state.streak}${R}  ${GRAY}Q: ${state.index + 1}/${state.pool.length}${R}`);
+  out.push('');
+
+  // Timer bar
+  if (!state.revealed) {
+    const pct = state.timeLeft / state.timeMax;
+    const barLen = 20;
+    const filled = Math.ceil(pct * barLen);
+    const empty = barLen - filled;
+    const tColor = pct <= 0.25 ? RED : pct <= 0.5 ? YELLOW : GREEN;
+    out.push(`  ${tColor}${BOLD}[${R}${tColor}${'='.repeat(filled)}${GRAY}${'-'.repeat(empty)}${tColor}${BOLD}]${R} ${tColor}${state.timeLeft}s${R}`);
+  }
   out.push('');
 
   // Badges
@@ -320,6 +340,30 @@ function handleAnswer(key, state) {
   return state;
 }
 
+function handleTimeout(state) {
+  const q = state.pool[state.index];
+  state.revealed = true;
+  state.selected = null;
+  state.total++;
+  state.streak = 0;
+  state.message = `TIME'S UP! Answer was ${BOLD}${q.answer.toUpperCase()}${R}`;
+  state.messageColor = RED;
+
+  const stats = loadStats();
+  stats.played++;
+
+  if (!stats.byDifficulty) stats.byDifficulty = {};
+  if (!stats.byDifficulty[q.difficulty]) stats.byDifficulty[q.difficulty] = { total: 0, correct: 0 };
+  stats.byDifficulty[q.difficulty].total++;
+
+  if (!stats.byCategory) stats.byCategory = {};
+  if (!stats.byCategory[q.category]) stats.byCategory[q.category] = { total: 0, correct: 0 };
+  stats.byCategory[q.category].total++;
+
+  saveStats(stats);
+  return state;
+}
+
 function nextQuestion(state) {
   state.index++;
   state.selected = null;
@@ -328,8 +372,12 @@ function nextQuestion(state) {
 
   if (state.index >= state.pool.length) {
     state.gameOver = true;
+  } else {
+    const nextQ = state.pool[state.index];
+    state.timeLeft = getTimeLimit(nextQ.difficulty);
+    state.timeMax = getTimeLimit(nextQ.difficulty);
   }
   return state;
 }
 
-module.exports = { newGame, render, renderStats, handleAnswer, nextQuestion };
+module.exports = { newGame, render, renderStats, handleAnswer, handleTimeout, nextQuestion };

@@ -326,22 +326,43 @@ function runHangman(stdin, goMenu) {
 function runTrivia(stdin, goMenu) {
   let state = trivia.newGame();
   let showingStats = false;
+  let timer = null;
+
+  function startTimer() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => {
+      if (state.revealed || state.gameOver || showingStats) return;
+      state.timeLeft--;
+      if (state.timeLeft <= 0) {
+        state = trivia.handleTimeout(state);
+      }
+      trivia.render(state);
+    }, 1000);
+  }
+
+  function cleanup() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
   trivia.render(state);
+  startTimer();
 
   const handler = (key) => {
-    if (key === '\x03') { process.stdout.write(SHOW_CURSOR + clearScreen()); process.exit(0); }
-    if (key === '\x1b') { stdin.removeListener('data', handler); goMenu(); return; }
+    if (key === '\x03') { cleanup(); process.stdout.write(SHOW_CURSOR + clearScreen()); process.exit(0); }
+    if (key === '\x1b') { cleanup(); stdin.removeListener('data', handler); goMenu(); return; }
 
     if (showingStats) {
       showingStats = false;
       trivia.render(state);
+      if (!state.gameOver) startTimer();
       return;
     }
 
     if (state.gameOver) {
-      if (key === 'n' || key === 'N') { state = trivia.newGame(); trivia.render(state); }
+      cleanup();
+      if (key === 'n' || key === 'N') { state = trivia.newGame(); trivia.render(state); startTimer(); }
       else if (key === 's' || key === 'S') { showingStats = true; trivia.renderStats(); }
-      else if (key === 'm' || key === 'M' || key === '\x1b') { stdin.removeListener('data', handler); goMenu(); }
+      else if (key === 'm' || key === 'M') { stdin.removeListener('data', handler); goMenu(); }
       else if (key === 'q' || key === 'Q') { process.stdout.write(SHOW_CURSOR + clearScreen()); process.exit(0); }
       return;
     }
@@ -349,6 +370,7 @@ function runTrivia(stdin, goMenu) {
     if (state.revealed) {
       state = trivia.nextQuestion(state);
       trivia.render(state);
+      if (!state.gameOver) startTimer();
       return;
     }
 
